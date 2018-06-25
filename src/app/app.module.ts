@@ -1,16 +1,56 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { MaterialModule } from './material.module';
+
+import { TrailsService } from './services/trails.service';
+import { WeatherService } from './services/weather.service';
+
+import { CreateUserComponent } from './components/create-user/create-user.component';
+import { ListOfTrailsComponent } from './components/list-of-trails/list-of-trails.component';
+import { LoginComponent } from './components/login/login.component';
+import { TrailDetailsComponent } from './components/trail-details/trail-details.component';
+import { WriteAReviewComponent } from './components/write-a-review/write-a-review.component';
+import { PhotoUploadComponent } from './components/photo-upload/photo-upload.component';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    CreateUserComponent,
+    ListOfTrailsComponent,
+    LoginComponent,
+    TrailDetailsComponent,
+    WriteAReviewComponent,
+    PhotoUploadComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MaterialModule,
+    RouterModule.forRoot([
+      { path: "home", component: HomeComponent },
+      { path: "create-user", component: CreateUserComponent },
+      { path: "list-of-trails", component: ListOfTrailsComponent },
+      { path: "login", component: LoginComponent },
+      { path: "photo-upload", component: PhotoUploadComponent },
+      { path: "trail-details", component: TrailDetailsComponent },
+      { path: "write-a-review", component: WriteAReviewComponent }
+    ])
   ],
-  providers: [],
+  providers: [
+    TrailsService,
+    WeatherService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
