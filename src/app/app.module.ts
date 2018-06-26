@@ -18,6 +18,12 @@ import { WriteAReviewComponent } from './components/write-a-review/write-a-revie
 import { PhotoUploadComponent } from './components/photo-upload/photo-upload.component';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
+import {AngularFireAuthModule} from 'angularfire2/auth';
+import {environment} from "../environments/environment";
+import {AngularFireModule} from "angularfire2";
+import {AngularFirestoreModule} from "angularfire2/firestore";
+
+
 
 @NgModule({
   declarations: [
@@ -31,8 +37,11 @@ import { HomeComponent } from './components/home/home.component';
     PhotoUploadComponent
   ],
   imports: [
+    AngularFireModule.initializeApp(environment.firebase, 'hikingapp'),
     BrowserModule,
     BrowserAnimationsModule,
+    AngularFirestoreModule,
+    AngularFireAuthModule,
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
