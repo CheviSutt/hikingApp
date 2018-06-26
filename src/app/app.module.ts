@@ -12,7 +12,6 @@ import { WeatherService } from './services/weather.service';
 
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { ListOfTrailsComponent } from './components/list-of-trails/list-of-trails.component';
-import { LoginComponent } from './components/login/login.component';
 import { TrailDetailsComponent } from './components/trail-details/trail-details.component';
 import { WriteAReviewComponent } from './components/write-a-review/write-a-review.component';
 import { PhotoUploadComponent } from './components/photo-upload/photo-upload.component';
@@ -31,7 +30,6 @@ import {AngularFirestoreModule} from "angularfire2/firestore";
     HomeComponent,
     CreateUserComponent,
     ListOfTrailsComponent,
-    LoginComponent,
     TrailDetailsComponent,
     WriteAReviewComponent,
     PhotoUploadComponent
@@ -50,7 +48,6 @@ import {AngularFirestoreModule} from "angularfire2/firestore";
       { path: "home", component: HomeComponent },
       { path: "create-user", component: CreateUserComponent },
       { path: "list-of-trails", component: ListOfTrailsComponent },
-      { path: "login", component: LoginComponent },
       { path: "photo-upload", component: PhotoUploadComponent },
       { path: "trail-details", component: TrailDetailsComponent },
       { path: "write-a-review", component: WriteAReviewComponent }
