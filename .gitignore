@@ -40,3 +40,5 @@ Thumbs.db
 
 .editorconfig
 .idea
+
+local-api-keys/
