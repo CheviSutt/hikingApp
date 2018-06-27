@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import { auth } from 'firebase/app';
+import {TrailsService} from "../../services/trails.service";
+import {Trails} from "../../domains/trails";
 
 
 @Component({
@@ -13,12 +15,16 @@ export class HomeComponent implements OnInit {
   btnText2: string = 'Login';
   btnText3: string = 'Search';
   user: any;
+  trails: Trails[];
 
 
-  constructor(public afAuth: AngularFireAuth) { }
+  constructor(public afAuth: AngularFireAuth,
+              private trailservice: TrailsService) { }
 
   ngOnInit() {
-
+      this.trailservice.getTrails().subscribe(trails => {
+        this.trails = trails;
+      })
   }
 
   signupBtn(){
