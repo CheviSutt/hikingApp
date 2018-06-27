@@ -9,7 +9,7 @@ export class TrailsService {
 
   constructor(private http: HttpClient) { }
 
-  getTrails() : Observable<any> {
-    return this.http.get(`https://www.hikingproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=10&key=${trailsKey}`);
+  getTrails(latitude: any, longitude: any) : Observable<any> {
+    return this.http.get(`https://www.hikingproject.com/data/get-trails?lat=${latitude}&lon=${longitude}&maxDistance=10&key=${trailsKey}`);
   }
 }
