@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AngularFireAuth} from 'angularfire2/auth';
+import { AngularFireAuth } from 'angularfire2/auth';
 import { auth } from 'firebase/app';
-import {TrailsService} from "../../services/trails.service";
-import {Trails} from "../../domains/trails";
-
+import { TrailsService } from "../../services/trails.service";
 
 @Component({
   selector: 'home',
@@ -11,23 +9,20 @@ import {Trails} from "../../domains/trails";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  btnText: string = 'Signup';
   btnText2: string = 'Login';
   btnText3: string = 'Search';
   user: any;
-  trails: Trails[];
+  zipcode: string;
 
 
   constructor(public afAuth: AngularFireAuth,
               private trailservice: TrailsService) { }
 
   ngOnInit() {
-      this.trailservice.getTrails().subscribe(trails => {
-        this.trails = trails;
-      })
+
   }
 
-  signupBtn(){
+  signupBtn() {
     this.user = {
       address: "8 Mayfield Hill",
       city: "Long Beach",
@@ -38,11 +33,13 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  loginBtn(){
+  loginBtn() {
     this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
-    }
+  }
 
-  searchBtn(){
-
+  searchBtn() {
+    this.trailservice.getTrails(this.zipcode).subscribe(data =>{
+      console.log(data);
+    })
   }
 }

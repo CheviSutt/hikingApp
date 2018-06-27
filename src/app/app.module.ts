@@ -21,6 +21,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from "../environments/environment";
 import { AngularFireModule } from "angularfire2";
 import { AngularFirestoreModule } from "angularfire2/firestore";
+import { MapsService } from './services/maps.service';
 
 
 
@@ -55,7 +56,8 @@ import { AngularFirestoreModule } from "angularfire2/firestore";
   ],
   providers: [
     TrailsService,
-    WeatherService
+    WeatherService,
+    MapsService
   ],
   bootstrap: [AppComponent]
 })

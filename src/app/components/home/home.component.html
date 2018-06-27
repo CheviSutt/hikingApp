@@ -1,10 +1,10 @@
-
-
 <div>
-  <form>
-    <input type="submit" class="btn" [value]="btnText" routerLink="create-user" (click)="signupBtn()">
-    <input type="submit" class="btn" [value]="btnText2" (click)="loginBtn()">
-    <input type="submit" class="btn" [value]="btnText3" (click)="searchBtn()">
-    <input type="text" class="txt" name="item" placeholder="City/State/Zip">
-  </form>
+  <div>
+    <button [routerLink]="['/create-user']">Create User</button>
+    <button type="submit" class="btn" (click)="loginBtn()">Login</button>
+  </div>
+  <div>
+    <input type="text" [(ngModel)]="zipcode">
+    <button (click)="searchBtn()">Search</button>
+  </div>
 </div>
