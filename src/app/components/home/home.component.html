@@ -5,6 +5,6 @@
   </div>
   <div>
     <input type="text" [(ngModel)]="zipcode">
-    <button (click)="searchBtn()">Search</button>
+    <button [routerLink]="['/list-of-trails']" (click)="searchBtn()">Search</button>
   </div>
 </div>
