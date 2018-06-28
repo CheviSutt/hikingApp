@@ -1,4 +1,46 @@
-<div class="emailInput">
+
+<div>
+  <mat-card class="example-card">
+    <mat-card-header>
+
+      <mat-card-title>
+        <h2>Welcome,</h2>
+      </mat-card-title>
+
+    </mat-card-header>
+    <mat-card-content>
+      <form class="example-form">
+
+        <table class="example-full-width" cellspacing="0"><tr>
+          <td><mat-form-field class="example-full-width">
+            <input matInput placeholder="First name" name="firstName">
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width">
+            <input matInput placeholder="Last Name">
+          </mat-form-field></td>
+        </tr></table>
+
+        <p>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Address"/>
+          </mat-form-field>
+        </p>
+
+        <table class="example-full-width" cellspacing="0"><tr>
+          <td><mat-form-field class="example-full-width">
+            <input matInput placeholder="City">
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width">
+            <input matInput placeholder="State">
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width">
+            <input matInput placeholder="Zip Code">
+          </mat-form-field></td>
+        </tr></table>
+      </form>
+
+
+      <div class="emailInput">
   <mat-form-field>
     <input matInput placeholder="Enter your email" [formControl]="email" required>
     <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
@@ -10,4 +52,8 @@
     <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
     <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
   </mat-form-field>
+</div>
+
+    </mat-card-content>
+  </mat-card>
 </div>

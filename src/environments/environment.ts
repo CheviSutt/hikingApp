@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyAewF3L96ZpOOmm_KqB7zI6V7lwseW7E7c",
-    authDomain: "hikingapp-e36ba.firebaseapp.com",
-    databaseURL: "https://hikingapp-e36ba.firebaseio.com",
-    projectId: "hikingapp-e36ba",
-    storageBucket: "hikingapp-e36ba.appspot.com",
-    messagingSenderId: "59827419048"
+    apiKey: "AIzaSyBQnYZDce5ikqz3abWXdGfcmlBHtPT7T_k",
+    authDomain: "hikingapp-76e2e.firebaseapp.com",
+    databaseURL: "https://hikingapp-76e2e.firebaseio.com",
+    projectId: "hikingapp-76e2e",
+    storageBucket: "hikingapp-76e2e.appspot.com",
+    messagingSenderId: "35005898173"
   }
 };
 

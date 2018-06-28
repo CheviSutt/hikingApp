@@ -28,3 +28,9 @@ input.example-right-align::-webkit-inner-spin-button {
 input.example-right-align {
   -moz-appearance: textfield;
 }
+
+.example-card{
+  width: 80%;
+  padding-top: 100px;
+  margin: auto;
+}

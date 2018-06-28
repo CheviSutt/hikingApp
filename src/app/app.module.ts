@@ -22,6 +22,7 @@ import { environment } from "../environments/environment";
 import { AngularFireModule } from "angularfire2";
 import { AngularFirestoreModule } from "angularfire2/firestore";
 import { MapsService } from './services/maps.service';
+import {CreateUserService} from "./components/create-user/create-user.service";
 
 
 
@@ -57,7 +58,8 @@ import { MapsService } from './services/maps.service';
   providers: [
     TrailsService,
     WeatherService,
-    MapsService
+    MapsService,
+    CreateUserService
   ],
   bootstrap: [AppComponent]
 })
