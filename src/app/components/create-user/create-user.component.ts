@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
+import {HttpClient} from "@angular/common/http";
+import {CreateUserService} from "./create-user.service";
 
 @Component({
   selector: 'create-user',
@@ -7,6 +9,8 @@ import {FormControl, Validators} from '@angular/forms';
   styleUrls: ['./create-user.component.css']
 })
 export class CreateUserComponent implements OnInit {
+
+  user: any;
 
   hide = true;
 
@@ -17,9 +21,20 @@ export class CreateUserComponent implements OnInit {
       this.email.hasError('email') ? 'Not a valid email' :
         '';
   }
-  constructor() { }
+  constructor(private http: HttpClient,private createUserService: CreateUserService) { }
 
   ngOnInit() {
+    this.getUserInfo();
   }
 
+  getUserInfo(){
+    this.user = {
+      address: "8 Mayfield Hill",
+      city: "Long Beach",
+      first_name: "Theresa",
+      last_name: "Fiddy",
+      state: "California",
+      zipcode: "90831"
+    }
+  }
 }
