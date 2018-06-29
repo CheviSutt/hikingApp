@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 import {HttpClient} from "@angular/common/http";
-import {CreateUserService} from "./create-user.service";
+import {CreateUserService} from "../../services/create-user.service";
 
 @Component({
   selector: 'create-user',
@@ -34,7 +34,9 @@ export class CreateUserComponent implements OnInit {
       first_name: "Theresa",
       last_name: "Fiddy",
       state: "California",
-      zipcode: "90831"
+      zipcode: "90831",
+      email: "",
+      password: ""
     }
   }
 }

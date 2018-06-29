@@ -42,4 +42,5 @@ Thumbs.db
 .idea
 
 local-api-keys/
-environments/
+/environments
+
