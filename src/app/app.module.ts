@@ -22,7 +22,7 @@ import { environment } from "../environments/environment";
 import { AngularFireModule } from "angularfire2";
 import { AngularFirestoreModule } from "angularfire2/firestore";
 import { MapsService } from './services/maps.service';
-import {CreateUserService} from "./components/create-user/create-user.service";
+import {CreateUserService} from "./services/create-user.service";
 
 
 
@@ -37,7 +37,7 @@ import {CreateUserService} from "./components/create-user/create-user.service";
     PhotoUploadComponent
   ],
   imports: [
-    AngularFireModule.initializeApp(environment.firebase, 'hikingapp'),
+    AngularFireModule.initializeApp(environment, 'hikingapp-dba18'),
     BrowserModule,
     BrowserAnimationsModule,
     AngularFirestoreModule,
