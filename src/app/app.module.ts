@@ -38,7 +38,7 @@ import { AngularFirestoreModule } from "angularfire2/firestore";
     PhotoUploadComponent
   ],
   imports: [
-    AngularFireModule.initializeApp(environments, 'hikingapp-76e2e'),
+    AngularFireModule.initializeApp(environments.firebase, 'hikingapp-76e2e'),
     BrowserModule,
     BrowserAnimationsModule,
     AngularFirestoreModule,
