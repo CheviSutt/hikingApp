@@ -18,9 +18,10 @@ import { PhotoUploadComponent } from './components/photo-upload/photo-upload.com
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { environment } from "../environments/environment";
+import { environments } from "../environments/environments";
 import { AngularFireModule } from "angularfire2";
 import { AngularFirestoreModule } from "angularfire2/firestore";
+import { AngularFireDatabaseModule} from "angularfire2/database";
 import { MapsService } from './services/maps.service';
 import {CreateUserService} from "./services/create-user.service";
 
@@ -37,11 +38,12 @@ import {CreateUserService} from "./services/create-user.service";
     PhotoUploadComponent
   ],
   imports: [
-    AngularFireModule.initializeApp(environment, 'hikingapp-dba18'),
+    AngularFireModule.initializeApp(environments.firebase, 'hikingapp-dba18'),
     BrowserModule,
     BrowserAnimationsModule,
     AngularFirestoreModule,
     AngularFireAuthModule,
+    AngularFireDatabaseModule,
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
