@@ -13,6 +13,8 @@ export class TrailsService {
   constructor(private http: HttpClient,
               private mapsService: MapsService) { }
 
+
+  //This whole method returns the 10 nearest hiking trails based on zipcode/city input into the search bar
   getTrails(zip: string): Observable<any> {
     return this.mapsService.getLocation(zip).pipe(
       flatMap(locationData => {
@@ -21,7 +23,6 @@ export class TrailsService {
         return this.http.get(`https://www.hikingproject.com/data/get-trails?lat=${lat}&lon=${lng}&maxDistance=10&key=${trailsKey.default}`)
       }),
       map(data => {
-        console.log(data);
         return data;
       })
     )

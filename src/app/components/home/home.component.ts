@@ -12,7 +12,6 @@ export class HomeComponent implements OnInit {
   user: any;
   zipcode: string;
 
-
   constructor(public afAuth: AngularFireAuth,
               private trailservice: TrailsService) { }
 
@@ -20,15 +19,14 @@ export class HomeComponent implements OnInit {
 
   }
 
-
-
   loginBtn() {
     this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
   }
 
-  searchBtn() {
-    this.trailservice.getTrails(this.zipcode).subscribe(data =>{
+  searchBtn(): string {
+    this.trailservice.getTrails(this.zipcode).subscribe(data => {
       console.log(data);
+      return data;
     })
   }
 }
