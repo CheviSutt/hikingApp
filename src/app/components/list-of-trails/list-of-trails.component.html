@@ -1,5 +1,27 @@
 <div>
-  <mat-list>
-    <mat-list-item *ngFor="let trail of trails"> {{trail.name}} </mat-list-item>
-  </mat-list>
+  <mat-card *ngFor="let trail of trails" class="mat-card">
+
+    <mat-card-header>
+      <mat-card-title>
+        {{trail.name}}
+      </mat-card-title>
+
+      <mat-card-subtitle>
+        {{trail.location}}
+      </mat-card-subtitle>
+    </mat-card-header>
+
+    <img mat-card-image [src]=[trail.imgSmallMed]>
+
+    <mat-card-content>
+      <p>
+        {{trail.summary}}
+      </p>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button [routerLink]="['/trail-details']" (click)="trailDetailsButton()" mat-button>Details</button>
+    </mat-card-actions>
+
+  </mat-card>
 </div>

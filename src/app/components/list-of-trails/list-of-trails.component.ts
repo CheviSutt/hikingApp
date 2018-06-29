@@ -8,6 +8,7 @@ import { DataService } from '../../services/data.service';
   templateUrl: './list-of-trails.component.html',
   styleUrls: ['./list-of-trails.component.css']
 })
+
 export class ListOfTrailsComponent implements OnInit {
   trails: Trails[];
   zip: string;
@@ -20,11 +21,12 @@ export class ListOfTrailsComponent implements OnInit {
   ngOnInit() {
     this.data.currentZip.subscribe(zip => this.zip = zip);
 
-
     this.trailsService.getTrails(this.zip).subscribe(result => {
-      console.log(result.trails);
-      console.log(this.zip);
       this.trails = result.trails;
     });
+  }
+
+  trailDetailsButton() {
+
   }
 }
