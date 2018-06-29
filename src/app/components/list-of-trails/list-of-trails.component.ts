@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Trails } from '../../domains/trails';
 import { TrailsService } from '../../services/trails.service';
-import {HomeComponent} from '../home/home.component';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'list-of-trails',
@@ -10,17 +10,21 @@ import {HomeComponent} from '../home/home.component';
 })
 export class ListOfTrailsComponent implements OnInit {
   trails: Trails[];
-  // input: string = this.homeComponent.searchBtn();
+  zip: string;
 
   constructor(
     private trailsService: TrailsService,
-    public homeComponent: HomeComponent
-  ) { }
+    private data: DataService
+  ) {}
 
   ngOnInit() {
-    // this.trailsService.getTrails(this.input).subscribe(result => {
-    //   console.log(result.trails);
-    //   this.trails = result.trails;
-    // });
+    this.data.currentZip.subscribe(zip => this.zip = zip);
+
+
+    this.trailsService.getTrails(this.zip).subscribe(result => {
+      console.log(result.trails);
+      console.log(this.zip);
+      this.trails = result.trails;
+    });
   }
 }

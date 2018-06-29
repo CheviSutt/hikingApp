@@ -11,6 +11,7 @@ import { TrailsService } from './services/trails.service';
 import { WeatherService } from './services/weather.service';
 import { MapsService } from './services/maps.service';
 import { CreateUserService } from "./services/create-user.service";
+import { DataService } from './services/data.service';
 
 import { environments } from '../environments/environments';
 
@@ -60,7 +61,8 @@ import { AngularFirestoreModule } from "angularfire2/firestore";
     TrailsService,
     WeatherService,
     MapsService,
-    CreateUserService
+    CreateUserService,
+    DataService
   ],
   bootstrap: [AppComponent]
 })
