@@ -10,7 +10,7 @@ import {HomeComponent} from '../home/home.component';
 })
 export class ListOfTrailsComponent implements OnInit {
   trails: Trails[];
-  input: string = this.homeComponent.searchBtn();
+  // input: string = this.homeComponent.searchBtn();
 
   constructor(
     private trailsService: TrailsService,
@@ -18,9 +18,9 @@ export class ListOfTrailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.trailsService.getTrails(this.input).subscribe(result => {
-      console.log(result.trails);
-      this.trails = result.trails;
-    });
+    // this.trailsService.getTrails(this.input).subscribe(result => {
+    //   console.log(result.trails);
+    //   this.trails = result.trails;
+    // });
   }
 }

@@ -9,6 +9,10 @@ import { MaterialModule } from './material.module';
 
 import { TrailsService } from './services/trails.service';
 import { WeatherService } from './services/weather.service';
+import { MapsService } from './services/maps.service';
+import { CreateUserService } from "./services/create-user.service";
+
+import { environments } from '../environments/environments';
 
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { ListOfTrailsComponent } from './components/list-of-trails/list-of-trails.component';
@@ -17,13 +21,10 @@ import { WriteAReviewComponent } from './components/write-a-review/write-a-revie
 import { PhotoUploadComponent } from './components/photo-upload/photo-upload.component';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
+
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { environment } from "../environments/environment";
 import { AngularFireModule } from "angularfire2";
 import { AngularFirestoreModule } from "angularfire2/firestore";
-import { MapsService } from './services/maps.service';
-import {CreateUserService} from "./services/create-user.service";
-
 
 
 @NgModule({
@@ -37,7 +38,7 @@ import {CreateUserService} from "./services/create-user.service";
     PhotoUploadComponent
   ],
   imports: [
-    AngularFireModule.initializeApp(environment, 'hikingapp-dba18'),
+    AngularFireModule.initializeApp(environments, 'hikingapp-76e2e'),
     BrowserModule,
     BrowserAnimationsModule,
     AngularFirestoreModule,

@@ -23,10 +23,10 @@ export class HomeComponent implements OnInit {
     this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
   }
 
-  searchBtn(): string {
-    this.trailservice.getTrails(this.zipcode).subscribe(data => {
-      console.log(data);
-      return data;
-    })
-  }
+  // searchBtn(): string {
+  //   this.trailservice.getTrails(this.zipcode).subscribe(data => {
+  //     console.log(data);
+  //     return data;
+  //   })
+  // }
 }
