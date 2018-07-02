@@ -19,10 +19,18 @@ export class TrailDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.trailService.getTrail(this.route.snapshot.params['id']).subscribe((trail: Trails) => {
-      console.log(trail['0']);
-      this.activeTrail = trail['0'];
-    })
+    const zip = this.route.snapshot.params['zip'];
+    const id = this.route.snapshot.params['id'];
+    this.trailService.getTrails(zip).subscribe(result => {
+      const trails = result.trails;
+      trails.forEach(trail => {
+        if(trail.id == id){
+          this.activeTrail = trail;
+        }
+      })
+    });
+
+    console.log(this.route.snapshot);
   }
   back() {
     this.router.navigate(['/list-of-trails']);
