@@ -53,7 +53,7 @@ import {AngularFirestoreCollection, AngularFirestoreModule} from "angularfire2/f
       { path: "create-user", component: CreateUserComponent },
       { path: "list-of-trails", component: ListOfTrailsComponent },
       { path: "photo-upload", component: PhotoUploadComponent },
-      { path: "trail-details", component: TrailDetailsComponent },
+      { path: "trail-details/:id", component: TrailDetailsComponent },
       { path: "write-a-review", component: WriteAReviewComponent }
     ])
   ],

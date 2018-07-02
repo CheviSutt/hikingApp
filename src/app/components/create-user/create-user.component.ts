@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
-import {HttpClient} from "@angular/common/http";
-import {CreateUserService} from "../../services/create-user.service";
 import { AngularFirestore, AngularFirestoreCollection} from "angularfire2/firestore";
 import {Observable} from "rxjs/index";
 import {map} from "rxjs/internal/operators";
+import { FormControl, Validators } from '@angular/forms';
+import { HttpClient } from "@angular/common/http";
+import { CreateUserService } from "../../services/create-user.service";
 
 export interface Users {
   address: string;
