@@ -27,7 +27,6 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from "angularfire2";
 import { AngularFirestoreModule } from "angularfire2/firestore";
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +52,7 @@ import { AngularFirestoreModule } from "angularfire2/firestore";
       { path: "create-user", component: CreateUserComponent },
       { path: "list-of-trails", component: ListOfTrailsComponent },
       { path: "photo-upload", component: PhotoUploadComponent },
-      { path: "trail-details/:id", component: TrailDetailsComponent },
+      { path: "trail-details", component: TrailDetailsComponent },
       { path: "write-a-review", component: WriteAReviewComponent }
     ])
   ],

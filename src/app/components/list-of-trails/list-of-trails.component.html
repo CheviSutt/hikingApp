@@ -2,6 +2,9 @@
   <mat-card *ngFor="let trail of trails" class="mat-card">
 
     <mat-card-header>
+      <!--<div>{{weather.list.weather.main}}</div>-->
+      <!--<div>{{weather.list.weather.description}}</div>-->
+      <!--<div>{{weather.list.weather.icon}}</div>-->
       <mat-card-title>
         {{trail.name}}
       </mat-card-title>
@@ -20,7 +23,7 @@
     </mat-card-content>
 
     <mat-card-actions>
-      <button [routerLink]="['/trail-details', trail.id]" (click)="trailDetailsButton()" mat-button>Details</button>
+      <button [routerLink]="['/trail-details', {id: trail.id, zip: zip}]" mat-button>Details</button>
     </mat-card-actions>
 
   </mat-card>
