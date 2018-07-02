@@ -29,6 +29,7 @@ export class ListOfTrailsComponent implements OnInit {
 
     this.trailsService.getTrails(this.zip).subscribe(result => {
       this.trails = result.trails;
+      console.log(this.trails);
     });
 
     this.weatherService.getWeather(this.zip).subscribe(result => {

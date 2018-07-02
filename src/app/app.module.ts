@@ -25,7 +25,7 @@ import { HomeComponent } from './components/home/home.component';
 
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from "angularfire2";
-import { AngularFirestoreModule } from "angularfire2/firestore";
+import {AngularFirestoreCollection, AngularFirestoreModule} from "angularfire2/firestore";
 
 @NgModule({
   declarations: [
@@ -35,7 +35,7 @@ import { AngularFirestoreModule } from "angularfire2/firestore";
     ListOfTrailsComponent,
     TrailDetailsComponent,
     WriteAReviewComponent,
-    PhotoUploadComponent
+    PhotoUploadComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(environments.firebase, 'hikingapp-76e2e'),

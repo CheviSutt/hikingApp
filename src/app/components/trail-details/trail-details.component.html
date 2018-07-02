@@ -1,3 +1,12 @@
-<p>
-  trail-details works!
-</p>
+<mat-card>
+  <mat-card-content>
+    <h2>{{activeTrail?.name}}</h2>
+    <img [src]="activeTrail?.imgMedium" style="max-width: 200px;">
+    <p>Location: {{activeTrail?.location}}</p>
+    <p>Difficulty: {{activeTrail?.difficulty}}</p>
+    <p>Length: {{activeTrail?.length}}</p>
+  </mat-card-content>
+  <mat-card-actions style="display: flex;justify-content:flex-end">
+    <button mat-button (click)="back()"><mat-icon>chevron_left</mat-icon> BACK</button>
+  </mat-card-actions>
+</mat-card>
