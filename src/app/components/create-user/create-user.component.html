@@ -13,10 +13,10 @@
 
         <table class="example-full-width" cellspacing="0"><tr>
           <td><mat-form-field class="example-full-width">
-            <input matInput placeholder="First name" name="firstName">
+            <input [(ngModel)]="user.firstName" matInput placeholder="First name" name="firstName">
           </mat-form-field></td>
           <td><mat-form-field class="example-full-width">
-            <input matInput placeholder="Last Name">
+            <input [(ngModel)]="user.lastName" matInput placeholder="Last Name" name="lastName">
           </mat-form-field></td>
         </tr></table>
 
@@ -53,7 +53,7 @@
     <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
   </mat-form-field>
 </div>
-      <button mat-button>Submit!</button> <!--Needs logic/css-->
+      <button mat-button color="primary" (click)="createUser()">Submit!</button> <!--Needs logic/css-->
     </mat-card-content>
   </mat-card>
 </div>
