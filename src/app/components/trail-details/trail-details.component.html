@@ -1,12 +1,22 @@
 <mat-card>
   <mat-card-content>
     <h2>{{activeTrail?.name}}</h2>
-    <img [src]="activeTrail?.imgMedium" style="max-width: 200px;">
+    <img [src]="activeTrail?.imgMedium" style="max-width: 250px;">
     <p>Location: {{activeTrail?.location}}</p>
     <p>Difficulty: {{activeTrail?.difficulty}}</p>
-    <p>Length: {{activeTrail?.length}}</p>
+    <!-- <p>Type: {{activeTrail?.type}}</p> -->
+    <p>Length: {{activeTrail?.length}} miles</p>
+    <p>High Elevation: {{activeTrail?.high}} feet</p>
+    <p>Low Elevation: {{activeTrail?.low}} feet</p>
+    <p>Description: {{activeTrail?.summary}}</p>
+    <p>Condition: {{activeTrail?.conditionStatus}}</p>
+    <p>Details: {{activeTrail?.conditionDetails}}</p>
+    <p>Date of Condition and Details: {{activeTrail?.conditionDate}}</p>
+    <p>Description: {{activeTrail?.summary}}</p>
+    <!-- <p>Rating: {{activeTrail?.starVotes}}</p> -->
+    <write-a-review [trailRating]="activeTrail?.stars"></write-a-review>
   </mat-card-content>
   <mat-card-actions style="display: flex;justify-content:flex-end">
-    <button mat-button (click)="back()"><mat-icon>chevron_left</mat-icon> BACK</button>
+    <button mat-button (click)="back()"><mat-icon>chevron_left</mat-icon> Back</button>
   </mat-card-actions>
 </mat-card>
