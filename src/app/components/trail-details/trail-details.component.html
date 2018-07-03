@@ -1,20 +1,21 @@
 <mat-card>
   <mat-card-content>
+    <!--<h1>{{trailWeather?.weather[0].description}}</h1>-->
     <h2>{{activeTrail?.name}}</h2>
-    <img [src]="activeTrail?.imgMedium" style="max-width: 250px;">
+    <img *ngIf="activeTrail" [src]="activeTrail.imgMedium">
     <p>Location: {{activeTrail?.location}}</p>
     <p>Difficulty: {{activeTrail?.difficulty}}</p>
     <!-- <p>Type: {{activeTrail?.type}}</p> -->
     <p>Length: {{activeTrail?.length}} miles</p>
     <p>High Elevation: {{activeTrail?.high}} feet</p>
     <p>Low Elevation: {{activeTrail?.low}} feet</p>
-    <p>Description: {{activeTrail?.summary}}</p>
     <p>Condition: {{activeTrail?.conditionStatus}}</p>
     <p>Details: {{activeTrail?.conditionDetails}}</p>
-    <p>Date of Condition and Details: {{activeTrail?.conditionDate}}</p>
     <p>Description: {{activeTrail?.summary}}</p>
     <!-- <p>Rating: {{activeTrail?.starVotes}}</p> -->
+    <p class="possible-stars">{{activeTrail?.stars}} out of 5 Stars</p>
     <write-a-review [trailRating]="activeTrail?.stars"></write-a-review>
+    <p>Last Updated: {{activeTrail?.conditionDate}}</p>
   </mat-card-content>
   <mat-card-actions style="display: flex;justify-content:flex-end">
     <button mat-button (click)="back()"><mat-icon>chevron_left</mat-icon> Back</button>
