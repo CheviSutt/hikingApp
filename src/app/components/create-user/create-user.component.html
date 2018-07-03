@@ -22,19 +22,19 @@
 
         <p>
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Address"/>
+            <input  [(ngModel)]="user.address" matInput placeholder="Address" name="address">
           </mat-form-field>
         </p>
 
         <table class="example-full-width" cellspacing="0"><tr>
           <td><mat-form-field class="example-full-width">
-            <input matInput placeholder="City">
+            <input [(ngModel)]="user.city" matInput placeholder="City" name="city">
           </mat-form-field></td>
           <td><mat-form-field class="example-full-width">
-            <input matInput placeholder="State">
+            <input [(ngModel)]="user.state" matInput placeholder="State" name="state">
           </mat-form-field></td>
           <td><mat-form-field class="example-full-width">
-            <input matInput placeholder="Zip Code">
+            <input  [(ngModel)]="user.zipcode" matInput placeholder="Zip Code" name="zipcode">
           </mat-form-field></td>
         </tr></table>
       </form>
@@ -42,7 +42,7 @@
 
       <div class="emailInput">
   <mat-form-field>
-    <input matInput placeholder="Enter your email" [formControl]="email" required>
+    <input  [(ngModel)]="user.email" matInput placeholder="Enter your email" [formControl]="email" required>
     <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
   </mat-form-field>
 </div>

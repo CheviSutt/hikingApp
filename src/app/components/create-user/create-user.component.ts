@@ -63,14 +63,15 @@ export class CreateUserComponent implements OnInit {
       firstName: "",
       lastName: "",
       state: "",
-      zipCode: "",
+      zipcode: "",
       email: "",
       password: ""
     }
     return this.user;
   }
-    createUser(){
+    createUser(user: UserId){
       console.log(this.user);
+      this.userCollection.add(this.user);
     }
 
 }
