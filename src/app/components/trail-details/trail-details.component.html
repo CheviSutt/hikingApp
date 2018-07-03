@@ -6,7 +6,7 @@
     <p>Location: {{activeTrail?.location}}</p>
     <p>Difficulty: {{activeTrail?.difficulty}}</p>
     <!-- <p>Type: {{activeTrail?.type}}</p> -->
-    <p>Length: {{activeTrail?.length}} miles</p>
+    <p>Length: {{activeTrail?.length}} miles out and back</p>
     <p>High Elevation: {{activeTrail?.high}} feet</p>
     <p>Low Elevation: {{activeTrail?.low}} feet</p>
     <p>Condition: {{activeTrail?.conditionStatus}}</p>
@@ -19,6 +19,7 @@
   </mat-card-content>
   <mat-card-actions style="display: flex;justify-content:flex-end">
     <button mat-button (click)="back()"><mat-icon>chevron_left</mat-icon> Back</button>
+    <button mat-button (click)="rateTrail()"><mat-icon>rate_review</mat-icon> Rate Trail</button>
     <button mat-button (click)="uploadImg()"><mat-icon>add_photo_alternate</mat-icon> Upload Image</button>
   </mat-card-actions>
 </mat-card>

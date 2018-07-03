@@ -48,4 +48,8 @@ export class TrailDetailsComponent implements OnInit {
   uploadImg() {
     this.router.navigate(['photo-upload']);
   }
+
+  rateTrail() {
+    this.router.navigate(['write-a-review']);
+  }
 }
