@@ -5,6 +5,8 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { ImageUploadModule } from 'angular2-image-upload';
+
 import { MaterialModule } from './material.module';
 
 import { TrailsService } from './services/trails.service';
@@ -43,6 +45,7 @@ import { AngularFirestoreModule } from "angularfire2/firestore";
     BrowserAnimationsModule,
     AngularFirestoreModule,
     AngularFireAuthModule,
+    ImageUploadModule.forRoot(),
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
