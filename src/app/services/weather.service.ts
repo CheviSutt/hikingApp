@@ -13,6 +13,6 @@ export class WeatherService {
 
   getWeather(lat: string, lng: string): Observable<any> {
     console.log({lat,lng});
-    return this.http.get(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&APPID=${weatherKey.default}`);
+    return this.http.get(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&units=imperial&APPID=${weatherKey.default}`);
   }
 }

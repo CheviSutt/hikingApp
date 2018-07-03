@@ -44,4 +44,8 @@ export class TrailDetailsComponent implements OnInit {
   back() {
     this.router.navigate(['/list-of-trails']);
   }
+
+  uploadImg() {
+    this.router.navigate(['photo-upload']);
+  }
 }
