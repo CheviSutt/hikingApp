@@ -2,6 +2,7 @@ import { Trails } from './../../domains/trails';
 import { Component, OnInit } from '@angular/core';
 import { TrailsService } from '../../services/trails.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { WeatherService } from '../../services/weather.service';
 
 @Component({
   selector: 'trail-details',
@@ -10,13 +11,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class TrailDetailsComponent implements OnInit {
   activeTrail: Trails;
-  allTrails: Trails[];
+  trailWeather: any;
 
   constructor(
     private trailService: TrailsService,
     private route: ActivatedRoute,
-    private router: Router
-  ) { }
+    private router: Router,
+    private weatherService: WeatherService
+  ) {}
 
   ngOnInit() {
     const zip = this.route.snapshot.params['zip'];
@@ -24,16 +26,22 @@ export class TrailDetailsComponent implements OnInit {
     this.trailService.getTrails(zip).subscribe(result => {
       const trails = result.trails;
       trails.forEach(trail => {
-        if(trail.id == id){
+        if (trail.id == id) {
           this.activeTrail = trail;
         }
-      })
+      });
+      if (this.activeTrail) {
+        this.weatherService.getWeather(this.activeTrail.latitude.toString(), this.activeTrail.longitude.toString())
+          .subscribe(result => {
+            this.trailWeather = result;
+            console.log(result);
+          });
+      }
     });
-
     console.log(this.route.snapshot);
   }
+
   back() {
     this.router.navigate(['/list-of-trails']);
   }
 }
-

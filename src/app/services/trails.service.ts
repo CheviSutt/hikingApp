@@ -28,8 +28,4 @@ export class TrailsService {
       })
     )
   }
-
-  getTrail(id: string){
-    return this.http.get(`https://www.hikingproject.com/data/get-conditions?ids=${id}&key=${trailsKey.default}`);
-  }
 }
