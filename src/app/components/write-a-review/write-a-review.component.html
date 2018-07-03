@@ -1,3 +1,6 @@
-<p>
-  write-a-review works!
-</p>
+<div class="rating-container">
+  <span style="margin-top: 3px; margin-right: 10px;">Trail Rating: </span>
+  <div *ngFor="let rating of ratingArr">
+      <mat-icon>star_rate</mat-icon>
+  </div>
+</div>
