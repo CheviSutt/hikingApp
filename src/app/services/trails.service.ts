@@ -6,7 +6,6 @@ import { MapsService } from './maps.service';
 import * as trailsKey from '../local-api-keys/trails-api-key';
 import { flatMap } from 'rxjs/operators';
 import { map } from 'rxjs/internal/operators';
-import { Trails } from '../domains/trails';
 
 @Injectable()
 export class TrailsService {
