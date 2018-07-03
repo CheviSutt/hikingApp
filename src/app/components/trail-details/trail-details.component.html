@@ -1,6 +1,6 @@
 <mat-card>
   <mat-card-content>
-    <!--<h1>{{trailWeather?.weather[0].description}}</h1>-->
+    <h1>{{trailWeather?.main.temp}} &#8457;</h1>
     <h2>{{activeTrail?.name}}</h2>
     <img *ngIf="activeTrail" [src]="activeTrail.imgMedium">
     <p>Location: {{activeTrail?.location}}</p>
@@ -19,5 +19,6 @@
   </mat-card-content>
   <mat-card-actions style="display: flex;justify-content:flex-end">
     <button mat-button (click)="back()"><mat-icon>chevron_left</mat-icon> Back</button>
+    <button mat-button (click)="uploadImg()"><mat-icon>add_photo_alternate</mat-icon> Upload Image</button>
   </mat-card-actions>
 </mat-card>
