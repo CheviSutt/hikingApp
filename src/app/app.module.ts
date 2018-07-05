@@ -26,6 +26,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from "angularfire2";
 import { AngularFirestoreModule } from "angularfire2/firestore";
+import { AngularFireStorageModule } from 'angularfire2/storage';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { AngularFirestoreModule } from "angularfire2/firestore";
     BrowserModule,
     BrowserAnimationsModule,
     AngularFirestoreModule,
+    AngularFireStorageModule,
     AngularFireAuthModule,
     HttpClientModule,
     ReactiveFormsModule,
