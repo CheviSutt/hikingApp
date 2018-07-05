@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'write-a-review',
@@ -7,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class WriteAReviewComponent implements OnInit {
   _trailRating: number;
+  trailID: string;
 
   @Input()
   get trailRating() {
@@ -23,9 +25,11 @@ export class WriteAReviewComponent implements OnInit {
 
   ratingArr = [];
 
-  constructor() { }
+  constructor(
+    private data: DataService
+  ) { }
 
   ngOnInit() {
+    this.data.currentTrailID.subscribe(trailID => this.trailID = trailID);
   }
-
 }
