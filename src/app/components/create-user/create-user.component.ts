@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection} from "angularfire2/firestore";
+import { AngularFirestore, AngularFirestoreCollection, } from "angularfire2/firestore";
 import {Observable} from "rxjs/index";
 import {map} from "rxjs/internal/operators";
 import { FormControl, Validators } from '@angular/forms';
 import { HttpClient } from "@angular/common/http";
 import { CreateUserService } from "../../services/create-user.service";
+import firebase = require('firebase');
 
 export interface Users {
   address: string;
@@ -13,13 +14,14 @@ export interface Users {
   lastName: string;
   state: string;
   zipCode: string;
-  email: string;
+  email: any;
   password: string;
 }
 
 export interface UserId extends Users {
   id: string;
 }
+
 @Component({
   selector: 'create-user',
   templateUrl: './create-user.component.html',
@@ -31,8 +33,10 @@ export class CreateUserComponent implements OnInit {
   hide = true;
   email = new FormControl('', [Validators.required, Validators.email]);
 
+
   private userCollection: AngularFirestoreCollection<Users>;
   users: Observable<any[]>;
+  private password: string;
 
   constructor(private http: HttpClient,
               private createUserService: CreateUserService,
@@ -69,8 +73,26 @@ export class CreateUserComponent implements OnInit {
     }
     return this.user;
   }
-    createUser(){
-      console.log(this.user);
-    }
 
+  createUser(){
+    console.log(this.user);
+    this.userCollection.add(this.user);
+
+    firebase.auth().signInWithEmailAndPassword(this.email.toString(), this.password)
+      .catch(error => {
+        console.log(error);
+      });
+
+    firebase.auth().signOut().then(function() {
+      // Sign-out successful.
+    }).catch(function(error) {
+      // An error happened.
+    });
+  }
+
+  // firebase.auth().signOut().then(function() {
+  //   // Sign-out successful.
+  // }).catch(function(error) {
+  //   // An error happened.
+  // });
 }
