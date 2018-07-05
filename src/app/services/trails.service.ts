@@ -6,7 +6,6 @@ import { MapsService } from './maps.service';
 import * as trailsKey from '../local-api-keys/trails-api-key';
 import { flatMap } from 'rxjs/operators';
 import { map } from 'rxjs/internal/operators';
-import { Trails } from '../domains/trails';
 
 @Injectable()
 export class TrailsService {
@@ -27,9 +26,5 @@ export class TrailsService {
         return data;
       })
     )
-  }
-
-  getTrail(id: string){
-    return this.http.get(`https://www.hikingproject.com/data/get-conditions?ids=${id}&key=${trailsKey.default}`);
   }
 }

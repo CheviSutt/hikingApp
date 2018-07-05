@@ -25,7 +25,7 @@ import { HomeComponent } from './components/home/home.component';
 
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from "angularfire2";
-import {AngularFirestoreCollection, AngularFirestoreModule} from "angularfire2/firestore";
+import { AngularFirestoreModule } from "angularfire2/firestore";
 
 @NgModule({
   declarations: [
