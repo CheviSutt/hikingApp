@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireStorage, AngularFireStorageReference, AngularFireUploadTask } from 'angularfire2/storage';
 
 @Component({
   selector: 'photo-upload',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./photo-upload.component.css']
 })
 export class PhotoUploadComponent implements OnInit {
+  ref: AngularFireStorageReference;
+  task: AngularFireUploadTask;
 
-  constructor() { }
+  constructor(private afStorage: AngularFireStorage) { }
 
   ngOnInit() {
   }
 
+  upload(event) {
+    const id = Math.random().toString(36).substring(2);
+    this.ref = this.afStorage.ref(id);
+    this.task = this.ref.put(event.target.files[0]);
+  }
 }
