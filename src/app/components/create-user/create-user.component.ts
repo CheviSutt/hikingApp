@@ -5,7 +5,8 @@ import {map} from "rxjs/internal/operators";
 import { FormControl, Validators } from '@angular/forms';
 import { HttpClient } from "@angular/common/http";
 import { CreateUserService } from "../../services/create-user.service";
-import firebase = require('firebase');
+import * as firebase from "firebase/app";
+
 
 export interface Users {
   address: string;

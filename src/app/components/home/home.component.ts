@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { auth } from 'firebase/app';
 import { DataService } from '../../services/data.service';
+import * as firebase from "firebase/app";
+
+
 
 @Component({
   selector: 'home',
@@ -26,7 +29,17 @@ export class HomeComponent implements OnInit {
     this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
   }
 
+  logoutBtn(){
+    this.afAuth.auth.signOut();
+  }
+
   searchBtn() {
-    this.data.changeZip(this.zipcode);
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        this.data.changeZip(this.zipcode);
+      } else {
+        this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+      }
+    });
   }
 }
