@@ -12,10 +12,10 @@ import { WeatherService } from './services/weather.service';
 import { MapsService } from './services/maps.service';
 import { CreateUserService } from "./services/create-user.service";
 import { DataService } from './services/data.service';
-
+import { AuthService} from "./services/auth.service";
 import { environments } from '../environments/environments';
 
-import { CreateUserComponent } from './components/create-user/create-user.component';
+//import { CreateUserComponent } from './components/create-user/create-user.component';
 import { ListOfTrailsComponent } from './components/list-of-trails/list-of-trails.component';
 import { TrailDetailsComponent } from './components/trail-details/trail-details.component';
 import { WriteAReviewComponent } from './components/write-a-review/write-a-review.component';
@@ -32,7 +32,7 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
   declarations: [
     AppComponent,
     HomeComponent,
-    CreateUserComponent,
+   // CreateUserComponent,
     ListOfTrailsComponent,
     TrailDetailsComponent,
     WriteAReviewComponent,
@@ -51,7 +51,7 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
     MaterialModule,
     RouterModule.forRoot([
       { path: "home", component: HomeComponent },
-      { path: "create-user", component: CreateUserComponent },
+      //{ path: "create-user", component: CreateUserComponent },
       { path: "list-of-trails", component: ListOfTrailsComponent },
       { path: "photo-upload", component: PhotoUploadComponent },
       { path: "trail-details", component: TrailDetailsComponent },
@@ -63,7 +63,8 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
     WeatherService,
     MapsService,
     CreateUserService,
-    DataService
+    DataService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
