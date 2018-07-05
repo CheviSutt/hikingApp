@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { TrailsService } from '../../services/trails.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { WeatherService } from '../../services/weather.service';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'trail-details',
@@ -12,15 +13,18 @@ import { WeatherService } from '../../services/weather.service';
 export class TrailDetailsComponent implements OnInit {
   activeTrail: Trails;
   trailWeather: any;
+  trailID: string;
 
   constructor(
     private trailService: TrailsService,
     private route: ActivatedRoute,
     private router: Router,
-    private weatherService: WeatherService
+    private weatherService: WeatherService,
+    private data: DataService
   ) {}
 
   ngOnInit() {
+    this.data.currentTrailID.subscribe(trailID => this.trailID = trailID);
     const zip = this.route.snapshot.params['zip'];
     const id = this.route.snapshot.params['id'];
     this.trailService.getTrails(zip).subscribe(result => {
