@@ -1,60 +1,60 @@
 
-<div>
-  <mat-card class="example-card">
-    <mat-card-header>
+<!--<div>-->
+  <!--<mat-card class="example-card">-->
+    <!--<mat-card-header>-->
 
-      <mat-card-title>
-        <h2>Welcome,</h2>
-      </mat-card-title>
+      <!--<mat-card-title>-->
+        <!--<h2>Welcome,</h2>-->
+      <!--</mat-card-title>-->
 
-    </mat-card-header>
-    <mat-card-content>
-      <form class="example-form">
+    <!--</mat-card-header>-->
+    <!--<mat-card-content>-->
+      <!--<form class="example-form">-->
 
-        <table class="example-full-width" cellspacing="0"><tr>
-          <td><mat-form-field class="example-full-width">
-            <input [(ngModel)]="user.firstName" matInput placeholder="First name" name="firstName">
-          </mat-form-field></td>
-          <td><mat-form-field class="example-full-width">
-            <input [(ngModel)]="user.lastName" matInput placeholder="Last Name" name="lastName">
-          </mat-form-field></td>
-        </tr></table>
+        <!--<table class="example-full-width" cellspacing="0"><tr>-->
+          <!--<td><mat-form-field class="example-full-width">-->
+            <!--<input [(ngModel)]="user.firstName" matInput placeholder="First name" name="firstName">-->
+          <!--</mat-form-field></td>-->
+          <!--<td><mat-form-field class="example-full-width">-->
+            <!--<input [(ngModel)]="user.lastName" matInput placeholder="Last Name" name="lastName">-->
+          <!--</mat-form-field></td>-->
+        <!--</tr></table>-->
 
-        <p>
-          <mat-form-field class="example-full-width">
-            <input matInput placeholder="Address"/>
-          </mat-form-field>
-        </p>
+        <!--<p>-->
+          <!--<mat-form-field class="example-full-width">-->
+            <!--<input matInput placeholder="Address"/>-->
+          <!--</mat-form-field>-->
+        <!--</p>-->
 
-        <table class="example-full-width" cellspacing="0"><tr>
-          <td><mat-form-field class="example-full-width">
-            <input matInput placeholder="City">
-          </mat-form-field></td>
-          <td><mat-form-field class="example-full-width">
-            <input matInput placeholder="State">
-          </mat-form-field></td>
-          <td><mat-form-field class="example-full-width">
-            <input matInput placeholder="Zip Code">
-          </mat-form-field></td>
-        </tr></table>
-      </form>
+        <!--<table class="example-full-width" cellspacing="0"><tr>-->
+          <!--<td><mat-form-field class="example-full-width">-->
+            <!--<input matInput placeholder="City">-->
+          <!--</mat-form-field></td>-->
+          <!--<td><mat-form-field class="example-full-width">-->
+            <!--<input matInput placeholder="State">-->
+          <!--</mat-form-field></td>-->
+          <!--<td><mat-form-field class="example-full-width">-->
+            <!--<input matInput placeholder="Zip Code">-->
+          <!--</mat-form-field></td>-->
+        <!--</tr></table>-->
+      <!--</form>-->
 
 
-      <div class="emailInput">
-  <mat-form-field>
-    <input matInput placeholder="Enter your email" [formControl]="email" required>
-    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-  </mat-form-field>
-</div>
+      <!--<div class="emailInput">-->
+  <!--<mat-form-field>-->
+    <!--<input matInput placeholder="Enter your email" [formControl]="email" required>-->
+    <!--<mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
+  <!--</mat-form-field>-->
+<!--</div>-->
 
-<div class="passWerd">
-  <mat-form-field>
-    <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
-    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
-  </mat-form-field>
-</div>
-      <button mat-button color="primary" (click)="createUser()">Submit!</button> <!--Needs logic/css-->
-    </mat-card-content>
-  </mat-card>
-</div>
+<!--<div class="passWerd">-->
+  <!--<mat-form-field>-->
+    <!--<input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">-->
+    <!--<mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>-->
+  <!--</mat-form-field>-->
+<!--</div>-->
+      <!--<button mat-button color="primary" (click)="createUser()">Submit!</button> &lt;!&ndash;Needs logic/css&ndash;&gt;-->
+    <!--</mat-card-content>-->
+  <!--</mat-card>-->
+<!--</div>-->
 

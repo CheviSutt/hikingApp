@@ -4,6 +4,8 @@ import { TrailsService } from '../../services/trails.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { WeatherService } from '../../services/weather.service';
 import { DataService } from '../../services/data.service';
+import { MatDialog } from '@angular/material';
+import { PhotoUploadComponent } from '../photo-upload/photo-upload.component';
 
 @Component({
   selector: 'trail-details',
@@ -14,13 +16,15 @@ export class TrailDetailsComponent implements OnInit {
   activeTrail: Trails;
   trailWeather: any;
   trailID: string;
+  photo: any;
 
   constructor(
     private trailService: TrailsService,
     private route: ActivatedRoute,
     private router: Router,
     private weatherService: WeatherService,
-    private data: DataService
+    private data: DataService,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -43,15 +47,23 @@ export class TrailDetailsComponent implements OnInit {
       }
     });
     console.log(this.route.snapshot);
+    console.log(this.route.snapshot.params.id);
   }
 
   back() {
     this.router.navigate(['/list-of-trails']);
   }
 
-  uploadImg() {
-    this.router.navigate(['photo-upload']);
+  openDialog(): void {
+    const dialogRef = this.dialog.open(PhotoUploadComponent, {
+      width: '500px',
+      data: {photo: this.photo}
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      this.photo = result;
+    });
+    console.log(this.trailID);
   }
 
   rateTrail() {

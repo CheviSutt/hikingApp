@@ -15,6 +15,4 @@ export class DataService {
   changeZip(zip: string) {
     this.zipSource.next(zip);
   }
-
-  
 }

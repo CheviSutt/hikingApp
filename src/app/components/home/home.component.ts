@@ -4,8 +4,6 @@ import { auth } from 'firebase/app';
 import { DataService } from '../../services/data.service';
 import * as firebase from "firebase/app";
 
-
-
 @Component({
   selector: 'home',
   templateUrl: './home.component.html',
