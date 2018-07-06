@@ -8,7 +8,6 @@ import { Observable } from "rxjs/index";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
   createUser: Observable<any[]>;
 
   constructor(
