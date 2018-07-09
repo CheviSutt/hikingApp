@@ -1,4 +1,19 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<home></home>
-<router-outlet></router-outlet>
+<!--<home></home>-->
+<!--<router-outlet></router-outlet>-->
 
+<div>
+  <div>
+    <!--<button [routerLink]="['/create-user']">Create User</button>-->
+    <button type="submit" class="btn" (click)="loginBtn()">Login</button>
+    <button [routerLink]="['']" type="submit" class="btn" (click)="logoutBtn()">Logout</button>
+    <!--<button type="submit" class="btn" (click)="logoutBtn()">Login</button>-->
+  </div>
+  <!--<div>-->
+    <!--<input type="text" [(ngModel)]="zipcode">-->
+    <!--<button [routerLink]="['/list-of-trails']" (click)="searchBtn()">Search</button>-->
+  <!--</div>-->
+
+  <router-outlet></router-outlet>
+
+</div>
