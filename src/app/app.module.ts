@@ -20,8 +20,8 @@ import { TrailDetailsComponent } from './components/trail-details/trail-details.
 import { WriteAReviewComponent } from './components/write-a-review/write-a-review.component';
 import { PhotoUploadComponent } from './components/photo-upload/photo-upload.component';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
 import { StarsComponent } from './components/stars/stars.component';
+import { HomeComponent } from './components/home/home.component';
 
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from "angularfire2";
@@ -57,6 +57,10 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
       { path: "write-a-review", component: WriteAReviewComponent },
       { path: "stars", component: StarsComponent },
     ])
+  ],
+  entryComponents: [
+    WriteAReviewComponent,
+    PhotoUploadComponent
   ],
   providers: [
     TrailsService,

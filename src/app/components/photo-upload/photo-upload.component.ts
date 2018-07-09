@@ -13,6 +13,7 @@ export class PhotoUploadComponent implements OnInit {
   ref: AngularFireStorageReference;
   task: AngularFireUploadTask;
   uploadProgress: Observable<number>;
+  photo: any;
 
   constructor(
     private afStorage: AngularFireStorage,
@@ -31,6 +32,6 @@ export class PhotoUploadComponent implements OnInit {
   }
 
   onNoClick(): void {
-    this.photoDialogRef.close();
+    this.photoDialogRef.close({data: this.photo});
   }
 }

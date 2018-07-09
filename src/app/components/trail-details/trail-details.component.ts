@@ -64,6 +64,7 @@ export class TrailDetailsComponent implements OnInit {
 
     photoDialogRef.afterClosed().subscribe(result => {
       this.photo = result;
+      console.log(result);
     });
   }
 
@@ -74,8 +75,8 @@ export class TrailDetailsComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
       this.review = result;
+      console.log(result);
     });
   }
 
