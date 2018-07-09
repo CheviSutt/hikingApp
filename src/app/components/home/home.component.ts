@@ -36,11 +36,10 @@ export class HomeComponent implements OnInit {
 
   searchBtn() {
     firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
-      } else {
-        this.data.changeZip(this.zipcode);
-      }
+      this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
     });
   }
 }
+
+
+
