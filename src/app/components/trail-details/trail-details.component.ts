@@ -6,6 +6,7 @@ import { WeatherService } from '../../services/weather.service';
 import { DataService } from '../../services/data.service';
 import { MatDialog } from '@angular/material';
 import { PhotoUploadComponent } from '../photo-upload/photo-upload.component';
+import { WriteAReviewComponent } from '../write-a-review/write-a-review.component';
 
 @Component({
   selector: 'trail-details',
@@ -17,6 +18,7 @@ export class TrailDetailsComponent implements OnInit {
   trailWeather: any;
   trailID: string;
   photo: any;
+  review: string;
 
   constructor(
     private trailService: TrailsService,
@@ -54,19 +56,25 @@ export class TrailDetailsComponent implements OnInit {
     this.router.navigate(['/list-of-trails']);
   }
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(PhotoUploadComponent, {
+  openPhotoDialog(): void {
+    const photoDialogRef = this.dialog.open(PhotoUploadComponent, {
       width: '500px',
       data: {photo: this.photo}
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    photoDialogRef.afterClosed().subscribe(result => {
       this.photo = result;
     });
-    console.log(this.trailID);
   }
 
-  rateTrail() {
-    this.router.navigate(['write-a-review']);
+  openReviewDialog(): void {
+    const dialogRef = this.dialog.open(WriteAReviewComponent, {
+      width: '500px',
+      data: {review: this.review}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.review = result;
+    });
   }
 }

@@ -16,8 +16,8 @@ export class PhotoUploadComponent implements OnInit {
 
   constructor(
     private afStorage: AngularFireStorage,
-    public dialogRef: MatDialogRef<PhotoUploadComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Dialog
+    public photoDialogRef: MatDialogRef<PhotoUploadComponent>,
+    @Inject(MAT_DIALOG_DATA) public photoData: Dialog
   ) { }
 
   ngOnInit() {
@@ -31,6 +31,6 @@ export class PhotoUploadComponent implements OnInit {
   }
 
   onNoClick(): void {
-    this.dialogRef.close();
+    this.photoDialogRef.close();
   }
 }
