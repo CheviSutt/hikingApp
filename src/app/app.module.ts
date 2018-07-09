@@ -18,7 +18,6 @@ import { environments } from '../environments/environments';
 import { ListOfTrailsComponent } from './components/list-of-trails/list-of-trails.component';
 import { TrailDetailsComponent } from './components/trail-details/trail-details.component';
 import { WriteAReviewComponent } from './components/write-a-review/write-a-review.component';
-import { PhotoUploadComponent } from './components/photo-upload/photo-upload.component';
 import { AppComponent } from './app.component';
 import { StarsComponent } from './components/stars/stars.component';
 import { HomeComponent } from './components/home/home.component';
@@ -35,7 +34,6 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
     ListOfTrailsComponent,
     TrailDetailsComponent,
     WriteAReviewComponent,
-    PhotoUploadComponent,
     StarsComponent
   ],
   imports: [
@@ -52,15 +50,13 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
     RouterModule.forRoot([
       { path: "home", component: HomeComponent },
       { path: "list-of-trails", component: ListOfTrailsComponent },
-      { path: "photo-upload", component: PhotoUploadComponent },
       { path: "trail-details", component: TrailDetailsComponent },
       { path: "write-a-review", component: WriteAReviewComponent },
       { path: "stars", component: StarsComponent },
     ])
   ],
   entryComponents: [
-    WriteAReviewComponent,
-    PhotoUploadComponent
+    WriteAReviewComponent
   ],
   providers: [
     TrailsService,
