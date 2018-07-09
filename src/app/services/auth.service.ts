@@ -11,19 +11,19 @@ export class AuthService {
 
   }
 
-  // signIn(){
-  //   this.fbAuth.auth.signInWithPopup(this.provider)
-  //     .then(results => {
-  //       console.log(results);
-  //     })
-  // }
-  //
-  // signOut(){
-  //   this.fbAuth.auth.signOut();
-  // }
-  //
-  // getUser() {
-  //   console.log(firebase.auth().currentUser);
-  // }
+  signIn(){
+    this.fbAuth.auth.signInWithPopup(this.provider)
+      .then(results => {
+        console.log(results);
+      })
+  }
+
+  signOut(){
+    this.fbAuth.auth.signOut();
+  }
+
+  getUser() {
+    console.log(firebase.auth().currentUser);
+  }
 
 }

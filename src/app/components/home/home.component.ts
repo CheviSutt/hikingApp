@@ -3,6 +3,8 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { auth } from 'firebase/app';
 import { DataService } from '../../services/data.service';
 import * as firebase from "firebase/app";
+import { AuthService} from "../../services/auth.service";
+
 
 @Component({
   selector: 'home',
@@ -15,8 +17,9 @@ export class HomeComponent implements OnInit {
   zipcode: string;
   zip: string;
 
-  constructor(public afAuth: AngularFireAuth,
-              private data: DataService
+  constructor(
+    public afAuth: AngularFireAuth,
+    private data: DataService
   ) {}
 
   ngOnInit() {
@@ -34,9 +37,9 @@ export class HomeComponent implements OnInit {
   searchBtn() {
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
-        this.data.changeZip(this.zipcode);
-      } else {
         this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+      } else {
+        this.data.changeZip(this.zipcode);
       }
     });
   }
