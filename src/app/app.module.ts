@@ -21,6 +21,7 @@ import { WriteAReviewComponent } from './components/write-a-review/write-a-revie
 import { PhotoUploadComponent } from './components/photo-upload/photo-upload.component';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
+import { StarsComponent } from './components/stars/stars.component';
 
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from "angularfire2";
@@ -35,6 +36,7 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
     TrailDetailsComponent,
     WriteAReviewComponent,
     PhotoUploadComponent,
+    StarsComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environments.firebase, 'hikingapp-76e2e'),
@@ -52,9 +54,13 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
       { path: "list-of-trails", component: ListOfTrailsComponent },
       { path: "photo-upload", component: PhotoUploadComponent },
       { path: "trail-details", component: TrailDetailsComponent },
-      { path: "write-a-review", component: WriteAReviewComponent }
+      { path: "write-a-review", component: WriteAReviewComponent },
+      { path: "stars", component: StarsComponent },
     ])
   ],
+  // entryComponents: [
+  //   WriteAReviewComponent
+  // ],
   providers: [
     TrailsService,
     WeatherService,

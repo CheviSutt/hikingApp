@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { DataService } from '../../services/data.service';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import { ReviewDialog } from '../../domains/review-dialog';
 
 @Component({
   selector: 'write-a-review',
@@ -7,29 +8,16 @@ import { DataService } from '../../services/data.service';
   styleUrls: ['./write-a-review.component.css']
 })
 export class WriteAReviewComponent implements OnInit {
-  _trailRating: number;
-  trailID: string;
-
-  @Input()
-  get trailRating() {
-    return this._trailRating;
-  }
-
-  set trailRating(rating: number) {
-      this._trailRating = rating;
-      this.ratingArr = [];
-      for (let i = 0; i < this.trailRating; i++) {
-          this.ratingArr.push(i.toString());
-      }
-  }
-
-  ratingArr = [];
 
   constructor(
-    private data: DataService
+    public dialogRef: MatDialogRef<WriteAReviewComponent>,
+    @Inject(MAT_DIALOG_DATA) public DialogData: ReviewDialog
   ) { }
 
   ngOnInit() {
-    this.data.currentTrailID.subscribe(trailID => this.trailID = trailID);
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 }

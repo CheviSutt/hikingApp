@@ -15,12 +15,12 @@
     <p>Description: {{activeTrail?.summary}}</p>
     <!-- <p>Rating: {{activeTrail?.starVotes}}</p> -->
     <p class="possible-stars">{{activeTrail?.stars}} out of 5 Stars</p>
-    <write-a-review [trailRating]="activeTrail?.stars"></write-a-review>
+    <stars [trailRating]="activeTrail?.stars"></stars>
     <p>Last Updated: {{activeTrail?.conditionDate}}</p>
   </mat-card-content>
   <mat-card-actions style="display: flex;justify-content:flex-end">
     <button mat-raised-button (click)="back()"><mat-icon>chevron_left</mat-icon> Back</button>
-    <button mat-raised-button (click)="rateTrail()"><mat-icon>rate_review</mat-icon> Rate Trail</button>
-    <button mat-raised-button (click)="openDialog()"><mat-icon>add_photo_alternate</mat-icon> Upload Image</button>
+    <button mat-raised-button (click)="openReviewDialog()"><mat-icon>rate_review</mat-icon> Rate Trail</button>
+    <button mat-raised-button (click)="openPhotoDialog()"><mat-icon>add_photo_alternate</mat-icon> Upload Image</button>
   </mat-card-actions>
 </mat-card>
