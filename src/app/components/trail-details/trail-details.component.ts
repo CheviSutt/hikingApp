@@ -63,7 +63,6 @@ export class TrailDetailsComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       this.photo = result;
     });
-    console.log(this.trailID);
   }
 
   rateTrail() {
