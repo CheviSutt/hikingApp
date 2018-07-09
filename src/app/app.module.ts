@@ -58,9 +58,6 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
       { path: "stars", component: StarsComponent },
     ])
   ],
-  // entryComponents: [
-  //   WriteAReviewComponent
-  // ],
   providers: [
     TrailsService,
     WeatherService,

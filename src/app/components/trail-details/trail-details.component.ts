@@ -74,7 +74,12 @@ export class TrailDetailsComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
       this.review = result;
     });
+  }
+
+  showReviews() {
+
   }
 }

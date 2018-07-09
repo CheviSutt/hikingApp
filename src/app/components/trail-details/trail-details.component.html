@@ -6,21 +6,19 @@
     <img *ngIf="photo">{{photo}}
     <p>Location: {{activeTrail?.location}}</p>
     <p>Difficulty: {{activeTrail?.difficulty}}</p>
-    <!-- <p>Type: {{activeTrail?.type}}</p> -->
     <p>Length: {{activeTrail?.length}} miles out and back</p>
     <p>High Elevation: {{activeTrail?.high}} feet</p>
     <p>Low Elevation: {{activeTrail?.low}} feet</p>
     <p>Condition: {{activeTrail?.conditionStatus}}</p>
     <p>Details: {{activeTrail?.conditionDetails}}</p>
     <p>Description: {{activeTrail?.summary}}</p>
-    <!-- <p>Rating: {{activeTrail?.starVotes}}</p> -->
     <p class="possible-stars">{{activeTrail?.stars}} out of 5 Stars</p>
     <stars [trailRating]="activeTrail?.stars"></stars>
-    <p>Last Updated: {{activeTrail?.conditionDate}}</p>
   </mat-card-content>
   <mat-card-actions style="display: flex;justify-content:flex-end">
     <button mat-raised-button (click)="back()"><mat-icon>chevron_left</mat-icon> Back</button>
     <button mat-raised-button (click)="openReviewDialog()"><mat-icon>rate_review</mat-icon> Rate Trail</button>
     <button mat-raised-button (click)="openPhotoDialog()"><mat-icon>add_photo_alternate</mat-icon> Upload Image</button>
+    <button mat-raised-button (click)="showReviews()">Show Reviews</button>
   </mat-card-actions>
 </mat-card>
