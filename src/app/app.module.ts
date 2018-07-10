@@ -53,7 +53,7 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
       { path: "trail-details", component: TrailDetailsComponent },
       { path: "write-a-review", component: WriteAReviewComponent },
       { path: "stars", component: StarsComponent },
-    ])
+    ], {enableTracing: true})
   ],
   entryComponents: [
     WriteAReviewComponent

@@ -67,6 +67,6 @@ export class TrailDetailsComponent implements OnInit {
   }
 
   showReviews() {
-
+    document.getElementById('reviewsOn').style.display = "block";
   }
 }

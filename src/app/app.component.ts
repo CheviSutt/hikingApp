@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { auth } from 'firebase/app';
+import { Router } from "@angular/router";
 import { Observable } from "rxjs/Rx";
 import { AngularFirestore } from "angularfire2/firestore";
-import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -32,7 +32,6 @@ export class AppComponent implements OnInit{
       console.log('authenticed');
       this.router.navigate(['/home']);
     })
-
   }
 
   logoutBtn(){
