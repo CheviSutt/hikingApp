@@ -20,5 +20,6 @@ export class WriteAReviewComponent implements OnInit {
 
   onNoClick(): void {
     this.dialogRef.close({data: this.review});
+    //console.log(this.review);
   }
 }
