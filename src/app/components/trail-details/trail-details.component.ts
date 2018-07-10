@@ -5,7 +5,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { WeatherService } from '../../services/weather.service';
 import { DataService } from '../../services/data.service';
 import { MatDialog } from '@angular/material';
-import { PhotoUploadComponent } from '../photo-upload/photo-upload.component';
 import { WriteAReviewComponent } from '../write-a-review/write-a-review.component';
 
 @Component({
@@ -17,7 +16,6 @@ export class TrailDetailsComponent implements OnInit {
   activeTrail: Trails;
   trailWeather: any;
   trailID: string;
-  photo: any;
   review: string;
 
   constructor(
@@ -56,17 +54,6 @@ export class TrailDetailsComponent implements OnInit {
     this.router.navigate(['/list-of-trails']);
   }
 
-  openPhotoDialog(): void {
-    const photoDialogRef = this.dialog.open(PhotoUploadComponent, {
-      width: '500px',
-      data: {photo: this.photo}
-    });
-
-    photoDialogRef.afterClosed().subscribe(result => {
-      this.photo = result;
-    });
-  }
-
   openReviewDialog(): void {
     const dialogRef = this.dialog.open(WriteAReviewComponent, {
       width: '500px',
@@ -75,6 +62,11 @@ export class TrailDetailsComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       this.review = result;
+      console.log(result);
     });
+  }
+
+  showReviews() {
+    document.getElementById('reviewsOn').style.display = "block";
   }
 }

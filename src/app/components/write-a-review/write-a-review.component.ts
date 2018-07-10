@@ -8,6 +8,7 @@ import { ReviewDialog } from '../../domains/review-dialog';
   styleUrls: ['./write-a-review.component.css']
 })
 export class WriteAReviewComponent implements OnInit {
+  review: string;
 
   constructor(
     public dialogRef: MatDialogRef<WriteAReviewComponent>,
@@ -18,6 +19,7 @@ export class WriteAReviewComponent implements OnInit {
   }
 
   onNoClick(): void {
-    this.dialogRef.close();
+    this.dialogRef.close({data: this.review});
+    //console.log(this.review);
   }
 }
