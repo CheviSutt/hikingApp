@@ -3,8 +3,6 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { auth } from 'firebase/app';
 import { DataService } from '../../services/data.service';
 import * as firebase from "firebase/app";
-import { AuthService} from "../../services/auth.service";
-
 
 @Component({
   selector: 'home',

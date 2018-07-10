@@ -1,3 +1,14 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import '~bootstrap/dist/css/bootstrap.min.css';
 * { border-radius: 0 !important; }
+
+body{
+  height: 100%;
+}
+
+.bg-img{
+  background-image: url('./assets/images/adventure-albay-clouds-672358.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
