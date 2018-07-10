@@ -1,0 +1,33 @@
+.container{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.spacer-top{
+  height: 200px;
+}
+
+.title{
+  font-family: 'Shadows Into Light', cursive;
+  font-weight: bold;
+  color: #FFFFFF;
+  font-size: 130px;
+}
+
+.spacer-bottom{
+  height: 200px;
+}
+
+.btnContainer{
+  display: flex;
+  width: 100%;
+  height: 50px;
+  justify-content: flex-end;
+}
+
+.btn{
+  margin: auto 0;
+  padding: 0 5px 0 0;
+}
