@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Trails } from '../../domains/trails';
 import { TrailsService } from '../../services/trails.service';
 import { DataService } from '../../services/data.service';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'list-of-trails',
@@ -16,13 +17,15 @@ export class ListOfTrailsComponent implements OnInit {
 
   constructor(
     private trailsService: TrailsService,
-    private data: DataService
+    private data: DataService,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
-    this.data.currentZip.subscribe(zip => this.zip = zip);
+    this.data.currentZip.subscribe(zip => this.zip = zip); // This was commented out With Albertos code
 
     this.data.currentTrailID.subscribe(trailID => this.trailID = trailID);
+    //this.zip = this.route.snapshot.data.zipCode; // Albertos code for bug
 
     this.trailsService.getTrails(this.zip).subscribe(result => {
       this.trails = result.trails;

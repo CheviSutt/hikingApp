@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { auth } from 'firebase/app';
 import * as firebase from "firebase/app";
-//import { AuthService} from "../../services/auth.service";
+import { AuthService} from "../../services/auth.service";
 import {Observable} from "rxjs/Rx";
 import {AngularFirestore} from "angularfire2/firestore";
 import {Router} from "@angular/router";
@@ -30,7 +30,6 @@ export class AppComponent {
       console.log('authenticed');
       this.router.navigate(['/home']);
     })
-
   }
 
   logoutBtn(){
