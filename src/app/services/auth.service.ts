@@ -4,10 +4,8 @@ import * as firebase from "firebase/app";
 import { AngularFireAuth } from "angularfire2/auth";
 import { FirebaseListObservable } from "angularfire2/database-deprecated";
 
-// Data storage below
-export class Auth {
-  body: string;
-}
+
+export class Auth {}
 
 @Injectable()
 export class AuthService {
@@ -15,24 +13,9 @@ export class AuthService {
   userId: string;
 
   provider = new firebase.auth.GoogleAuthProvider();
-  constructor(private db: AngularFirestore, private fbAuth: AngularFireAuth){
-
-    // // Data storage below
-    // this.afAuth.authState.subscribe(user => {
-    //   if(user) this.userId = user.uid
-    // })
-  }
-
-  // Data storage below
-  // getAuthsList(): FirebaseListObservable<Auth[]> {
-  //   if (!this.userId) return;
-  //   this.auths = this.db.list(`auths/${this.userId}`);
-  //   return this.auths;
-  // }
-
-  // Data storage below
-  createAuth(auth: Auth) {
-    this.auths.push(auth)
+  constructor(
+    private db: AngularFirestore,
+    private fbAuth: AngularFireAuth){
   }
 
   signIn(){
@@ -49,5 +32,6 @@ export class AuthService {
   getUser() {
     console.log(firebase.auth().currentUser);
   }
+
 
 }
