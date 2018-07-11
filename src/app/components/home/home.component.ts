@@ -36,21 +36,7 @@ export class HomeComponent implements OnInit {
   }
 
   searchBtn() {
-<<<<<<< HEAD
-      this.data.changeZip(this.zipcode);
-      // this.router.navigateByUrl('/list-of-trails'); // Alberto's code for bug
-    }
-}
-
-
-    firebase.auth().onAuthStateChanged(function(user) {
-      this.data.changeZip(this.zipcode);
- };
-
-
-=======
     this.data.changeZip(this.zipcode);
     // this.router.navigateByUrl('/list-of-trails'); // Alberto's code for bug
   }
 }
->>>>>>> 22be1be9cc9b4d4fa11f145f8d5c9d2ddb8918a6

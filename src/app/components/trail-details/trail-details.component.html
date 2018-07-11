@@ -1,26 +1,26 @@
 <mat-card>
   <mat-card-content>
-    <h1>{{trailWeather?.main.temp}} &#8457;</h1>
     <h2>{{activeTrail?.name}}</h2>
+    <h5>{{trailWeather?.main.temp}} &#8457;</h5>
+    <h5>{{trailWeather?.weather}}</h5>
     <img class="trailImg" *ngIf="activeTrail" [src]="activeTrail.imgMedium">
-    <p>Location: {{activeTrail?.location}}</p>
-    <p>Difficulty: {{activeTrail?.difficulty}}</p>
-    <p>Length: {{activeTrail?.length}} miles out and back</p>
-    <p>High Elevation: {{activeTrail?.high}} feet</p>
-    <p>Low Elevation: {{activeTrail?.low}} feet</p>
-    <p>Condition: {{activeTrail?.conditionStatus}}</p>
-    <p>Details: {{activeTrail?.conditionDetails}}</p>
-    <p>Description: {{activeTrail?.summary}}</p>
+    <p><strong>Location:</strong> {{activeTrail?.location}}</p>
+    <p><strong>Difficulty:</strong> {{activeTrail?.difficulty}}</p>
+    <p><strong>Length:</strong> {{activeTrail?.length}} miles out and back</p>
+    <p><strong>High Elevation:</strong> {{activeTrail?.high}} feet</p>
+    <p><strong>Low Elevation:</strong> {{activeTrail?.low}} feet</p>
+    <p><strong>Condition:</strong> {{activeTrail?.conditionStatus}}</p>
+    <p><strong>Details:</strong> {{activeTrail?.conditionDetails}}</p>
+    <p><strong>Description:</strong> {{activeTrail?.summary}}</p>
     <p class="possible-stars">{{activeTrail?.stars}} out of 5 Stars</p>
     <stars [trailRating]="activeTrail?.stars"></stars>
-    <ul id="reviewsOn"  style="display:none;"> Reviews:
+    <p id="reviewsOn"  style="display:none;"><strong>Reviews:</strong>
       <li *ngIf="review">{{review.data}}</li>
-    </ul>
+    </p>
   </mat-card-content>
-  <mat-card-actions style="display: flex;justify-content:flex-end">
+  <mat-card-actions>
     <button mat-raised-button (click)="back()"><mat-icon>chevron_left</mat-icon> Back</button>
     <button mat-raised-button (click)="openReviewDialog()"><mat-icon>rate_review</mat-icon> Rate Trail</button>
     <button mat-raised-button (click)="showReviews()">Show Reviews</button>
   </mat-card-actions>
-  <!-- <write-a-review>Hello</write-a-review> -->
 </mat-card>
