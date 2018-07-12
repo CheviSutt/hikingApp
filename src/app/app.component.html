@@ -1,11 +1,10 @@
 <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
-<div class="container">
+
+<div class="backAndLogin"
+     *ngIf = "location !== '/home, /list-of-trails, /stars, /trail-details, /write-a-review' ">
   <div class="btnContainer">
-    <div class="btn">
+    <div class="loginBtn">
       <button mat-raised-button type="submit" class="btn" (click)="loginBtn()">Login</button>
-    </div>
-    <div class="btn">
-      <button mat-raised-button [routerLink]="['']" type="submit" class="btn" (click)="logoutBtn()">Logout</button>
     </div>
   </div>
   <div class="spacer-top"></div>
@@ -13,5 +12,20 @@
     <p>I'd Hike That</p>
   </div>
   <div class="spacer-bottom"></div>
-  <router-outlet></router-outlet>
 </div>
+
+<div class="backAndLogout" *ngIf = "location == '/home' ">
+  <div class="btnContainer">
+    <div class="logoutBtn">
+      <button mat-raised-button [routerLink]="['']" type="submit" class="btn" (click)="logoutBtn()">Logout</button>
+    </div>
+  </div>
+</div>
+
+<div class="logoutOnly" *ngIf = "location == '/list-of-trails' ">
+  <div class="btnContainer">
+    <button mat-raised-button [routerLink]="['']" type="submit" class="btn" (click)="logoutBtn()">Logout</button>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

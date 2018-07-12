@@ -1,4 +1,38 @@
-.container{
+.btnContainer{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.btn{
+  margin: auto 0;
+  padding: 0 5px 0 0;
+}
+
+.backAndLogin{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('../assets/images/adventure-albay-clouds-672358.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.backAndLogout{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('../assets/images/adventure-albay-clouds-672358.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.logoutOnly{
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -17,17 +51,5 @@
 }
 
 .spacer-bottom{
-  height: 200px;
-}
-
-.btnContainer{
-  display: flex;
-  width: 100%;
-  height: 50px;
-  justify-content: flex-end;
-}
-
-.btn{
-  margin: auto 0;
-  padding: 0 5px 0 0;
+  height: 249px;
 }

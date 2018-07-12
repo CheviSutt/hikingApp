@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { auth } from 'firebase/app';
 import { Router } from "@angular/router";
@@ -10,21 +10,19 @@ import { AngularFirestore } from "angularfire2/firestore";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent{
   createUser: Observable<any[]>;
+  public location = '';
 
   constructor(
     db: AngularFirestore,
     public afAuth: AngularFireAuth,
-    private router: Router
-
-  ) {
+    public router: Router
+  )
+  {
     this.createUser = db.collection('userProfile').valueChanges();
     console.log(this.createUser);
-  }
-
-  ngOnInit() {
-    document.body.classList.add('bg-img');
+    this.location = router.url;
   }
 
   loginBtn() {

@@ -1,11 +1,22 @@
 .container{
   height: 100%;
+  width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.btnContainer{
+.spacer-top{
+  height: 200px;
 }
 
-.spacer{
-  width: 30%;
+.title{
+  font-family: 'Shadows Into Light', cursive;
+  font-weight: bold;
+  color: #FFFFFF;
+  font-size: 130px;
+}
+
+.spacer-bottom{
+  height: 50px;
 }
