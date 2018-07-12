@@ -6,7 +6,6 @@ import { Observable } from "rxjs/Rx";
 import { AngularFirestore, AngularFirestoreCollection } from "angularfire2/firestore";
 import { FormControl, Validators } from "@angular/forms";
 import { CreateUserService } from "./services/create-user.service";
-import { AuthService } from "./services/auth.service";
 import { HttpClient } from "@angular/common/http";
 import { map } from "rxjs/internal/operators";
 import * as firebase from "firebase";
@@ -119,7 +118,7 @@ export class AppComponent implements OnInit{
       //-------------
 
       this.router.navigate(['/home']);
-      })
+    })
   }
 
 
