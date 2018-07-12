@@ -52,8 +52,8 @@ export class AppComponent implements OnInit{
 
     // 7-11-2018
     private http: HttpClient,
-    private createUserService: CreateUserService
-    //-------
+    private createUserService: CreateUserService,
+    // 7-12-18
   ) {
     this.createUser = db.collection('userProfile').valueChanges();
     console.log(this.createUser);
@@ -97,8 +97,20 @@ export class AppComponent implements OnInit{
   //------
 
   loginBtn() {
-    this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider()).then( () => {
+    this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider()).then( authenticated => {
       console.log('authenticed');
+
+      // 7-12-18
+      // if (authenticated.additionalUserInfo.isNewUser) {
+      //   const newUser:User = {
+      //     name:authenticated.user.displayName,
+      //     emailAddress:authenticated.user.email,
+      //     image:authenticated.user.photoURL,
+      //     userid:authenticated.user.uid
+      //   }
+      //   console.log('saving user');
+      //   this.createUserService.saveUser(newUser);
+      // }
 
       // 7-11-2018
       console.log(this.user);

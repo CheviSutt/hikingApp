@@ -4,8 +4,8 @@ import * as firebase from "firebase/app";
 import { AngularFireAuth } from "angularfire2/auth";
 import { FirebaseListObservable } from "angularfire2/database-deprecated";
 
-
 export class Auth {}
+
 
 @Injectable()
 export class AuthService {
