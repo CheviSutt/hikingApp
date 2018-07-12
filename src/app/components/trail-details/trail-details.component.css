@@ -27,3 +27,25 @@ stars {
   color: #ffb500;
 }
 
+.ratingDiv {
+  display: flex;
+  flex-direction: row;
+}
+
+.numOfRatings {
+  margin-left: 10px; 
+}
+
+.ascent-icon {
+  font-size: 10px;
+}
+
+.upDownArrows {
+  font-size: 10px;
+  margin: 0;
+}
+
+.length {
+  display: flex;
+  flex-direction: row;
+}
