@@ -1,8 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {AngularFireAuth} from 'angularfire2/auth';
-import {auth} from 'firebase/app';
-import {DataService} from '../../services/data.service';
-import {Router} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { auth } from 'firebase/app';
+import { DataService } from '../../services/data.service';
+import * as firebase from "firebase/app";
+import { AuthService} from "../../services/auth.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'home',
@@ -19,8 +21,7 @@ export class HomeComponent implements OnInit {
     public afAuth: AngularFireAuth,
     private data: DataService,
     private router: Router
-  ) {
-  }
+  ) {}
 
   ngOnInit() {
     this.data.currentZip.subscribe(zip => this.zip = zip);
@@ -31,12 +32,19 @@ export class HomeComponent implements OnInit {
     this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
   }
 
-  logoutBtn() {
+  logoutBtn(){
     this.afAuth.auth.signOut();
   }
 
   searchBtn() {
-    this.data.changeZip(this.zipcode);
-    // this.router.navigateByUrl('/list-of-trails'); // Alberto's code for bug
-  }
+      this.data.changeZip(this.zipcode);
+      // this.router.navigateByUrl('/list-of-trails'); // Alberto's code for bug
+    }
 }
+
+
+ //    firebase.auth().onAuthStateChanged(function(user) {
+ //      this.data.changeZip(this.zipcode);
+ // }
+
+

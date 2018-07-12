@@ -39,14 +39,15 @@
 //   users: Observable<any[]>;
 //   private password: string;
 //
-//   constructor(private http: HttpClient,
-//               private createUserService: CreateUserService,
-//               private db: AngularFirestore) {
-//     this.userCollection = this.db.collection<Users>('userProfile');
-//     this.users = this.userCollection.snapshotChanges().pipe(
-//       map(actions => actions.map(a => {
-//         const data = a.payload.doc.data() as Users;
-//         const id = a.payload.doc.id;
+//   constructor(
+//     private http: HttpClient,
+//     private createUserService: CreateUserService,
+//     private db: AngularFirestore) {
+//      this.userCollection = this.db.collection<Users>('userProfile');
+//       this.users = this.userCollection.snapshotChanges().pipe(
+//         map(actions => actions.map(a => {
+//           const data = a.payload.doc.data() as Users;
+//           const id = a.payload.doc.id;
 //         return { id, ...data };
 //       }))
 //     );
