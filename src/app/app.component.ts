@@ -52,9 +52,8 @@ export class AppComponent implements OnInit{
 
     // 7-11-2018
     private http: HttpClient,
-    private createUserService: CreateUserService,
+    private createUserService: CreateUserService
     //-------
-
   ) {
     this.createUser = db.collection('userProfile').valueChanges();
     console.log(this.createUser);
@@ -98,17 +97,12 @@ export class AppComponent implements OnInit{
   //------
 
   loginBtn() {
-    this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider()).then( authenticated => {
+    this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider()).then( () => {
       console.log('authenticed');
 
       // 7-11-2018
       console.log(this.user);
       this.userCollection.add(this.user);
-
-      firebase.auth().signInWithEmailAndPassword(this.email.toString(), this.password)
-        .catch(error => {
-          console.log(error);
-        });
 
       firebase.auth().signOut().then(function() {
         // Sign-out successful.
@@ -120,8 +114,6 @@ export class AppComponent implements OnInit{
       this.router.navigate(['/home']);
     })
   }
-
-
 
   logoutBtn(){
     this.afAuth.auth.signOut();

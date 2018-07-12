@@ -37,7 +37,7 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
     StarsComponent
   ],
   imports: [
-    AngularFireModule.initializeApp(environments.firebase, 'hikingapp-76e2e'),
+    AngularFireModule.initializeApp(environments.firebase),
     BrowserModule,
     BrowserAnimationsModule,
     AngularFirestoreModule,
