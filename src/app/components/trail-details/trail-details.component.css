@@ -2,6 +2,7 @@ body {
   background-color: #CFD8DC;
 }
 .trailImg {
+  margin: 15px auto;
   /* max-width: 300px; */
   width: 100%;
   /* margin: 0 auto; */
