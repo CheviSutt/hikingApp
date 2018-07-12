@@ -15,7 +15,7 @@
 //   lastName: string;
 //   state: string;
 //   zipCode: string;
-//   email: any;
+//   email: any;git add
 //   password: string;
 // }
 //

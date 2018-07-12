@@ -6,8 +6,6 @@ import { Observable } from "rxjs/Rx";
 import { AngularFirestore, AngularFirestoreCollection } from "angularfire2/firestore";
 import { FormControl, Validators } from "@angular/forms";
 import { CreateUserService } from "./services/create-user.service";
-import { AuthService } from "./services/auth.service";
-
 import { HttpClient } from "@angular/common/http";
 import { map } from "rxjs/internal/operators";
 import * as firebase from "firebase";
@@ -54,9 +52,8 @@ export class AppComponent implements OnInit{
 
     // 7-11-2018
     private http: HttpClient,
-    private createUserService: CreateUserService,
+    private createUserService: CreateUserService
     //-------
-
   ) {
     this.createUser = db.collection('userProfile').valueChanges();
     console.log(this.createUser);
@@ -100,7 +97,7 @@ export class AppComponent implements OnInit{
   //------
 
   loginBtn() {
-    this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider()).then( authenticated => {
+    this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider()).then( () => {
       console.log('authenticed');
 
       // 7-11-2018
@@ -117,7 +114,6 @@ export class AppComponent implements OnInit{
       this.router.navigate(['/home']);
     })
   }
-  
   logoutBtn(){
     this.afAuth.auth.signOut();
   }
