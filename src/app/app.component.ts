@@ -107,11 +107,6 @@ export class AppComponent implements OnInit{
       console.log(this.user);
       this.userCollection.add(this.user);
 
-      firebase.auth().signInWithEmailAndPassword(this.email.toString(), this.password)
-        .catch(error => {
-          console.log(error);
-        });
-
       firebase.auth().signOut().then(function() {
         // Sign-out successful.
       }).catch(function(error) {
@@ -122,9 +117,7 @@ export class AppComponent implements OnInit{
       this.router.navigate(['/home']);
     })
   }
-
-
-
+  
   logoutBtn(){
     this.afAuth.auth.signOut();
   }
