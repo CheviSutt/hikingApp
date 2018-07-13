@@ -16,6 +16,7 @@ export class AuthService {
   constructor(
     private db: AngularFirestore,
     private fbAuth: AngularFireAuth){
+
   }
 
   signIn(){
@@ -31,7 +32,6 @@ export class AuthService {
 
   getUser() {
     console.log(firebase.auth().currentUser);
+
   }
-
-
 }
