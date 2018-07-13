@@ -4,15 +4,13 @@
     <p>{{activeTrail?.location}}</p>
     <h5>{{trailWeather?.main.temp}} &#8457;</h5>
     <img class="trailImg" *ngIf="activeTrail" [src]="activeTrail.imgMedium">
-    <p><strong>Description:</strong> {{activeTrail?.summary}}</p>
-    <p><strong>Difficulty:</strong> {{activeTrail?.difficulty}}</p>
     <div class="length">
-      <p><strong>Length:</strong> {{activeTrail?.length}} mile out & back</p>
-      <!-- <mat-icon class="upDownArrows">arrow_upward</mat-icon><mat-icon class="upDownArrows">arrow_downward</mat-icon> -->
+      <p><strong>Difficulty:</strong> {{activeTrail?.difficulty}}</p>
+      <p>{{activeTrail?.length}} mi out & back</p>
+      <p>{{activeTrail?.ascent}} ft <mat-icon class="ascent-icon">trending_up</mat-icon></p>
     </div>
+    <p><strong>Description:</strong> {{activeTrail?.summary}}</p>
     <p><strong>Elevation:</strong> High: {{activeTrail?.high}} ft, Low: {{activeTrail?.low}} ft</p>
-    <p><strong>Ascent:</strong> {{activeTrail?.ascent}} ft <mat-icon class="ascent-icon">trending_up</mat-icon></p>
-    <!-- <p><strong>Low Elevation:</strong> {{activeTrail?.low}} feet</p> -->
     <p><strong>Condition:</strong> {{activeTrail?.conditionStatus}}</p>
     <!-- <p><strong>Details:</strong> {{activeTrail?.conditionDetails}}</p> -->
     <p class="possible-stars"><strong>{{activeTrail?.stars}} out of 5 Stars</strong></p>

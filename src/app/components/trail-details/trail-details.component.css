@@ -13,8 +13,8 @@ button {
 }
 
 mat-card {
-  background-color: #ECEFF1;
-  color: black;
+  background-color: #586c9a;
+  color: #ffffff;
   /* font-family: 'Roboto', sans-serif; */
 }
 
@@ -48,4 +48,5 @@ stars {
 .length {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
