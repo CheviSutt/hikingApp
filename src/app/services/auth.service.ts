@@ -16,5 +16,6 @@ export class AuthService {
   constructor(
     private db: AngularFirestore,
     private fbAuth: AngularFireAuth){
+
   }
 }

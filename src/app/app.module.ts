@@ -26,6 +26,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from "angularfire2";
 import { AngularFirestoreModule } from "angularfire2/firestore";
 import { AngularFireStorageModule } from 'angularfire2/storage';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
     ListOfTrailsComponent,
     TrailDetailsComponent,
     WriteAReviewComponent,
-    StarsComponent
+    StarsComponent,
+    LoginComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environments.firebase),
@@ -48,6 +50,7 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
     FormsModule,
     MaterialModule,
     RouterModule.forRoot([
+      { path: '', component: LoginComponent },
       { path: "home", component: HomeComponent },
       { path: "list-of-trails", component: ListOfTrailsComponent },
       { path: "trail-details", component: TrailDetailsComponent },
