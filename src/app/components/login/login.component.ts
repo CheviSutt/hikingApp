@@ -27,10 +27,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private db: AngularFirestore,
-    public afAuth: AngularFireAuth,
     private router: Router,
-    private http: HttpClient,
-    private createUserService: CreateUserService,
   ) {
     //Celie's code. Don't delete:
     this.location = router.url;
@@ -44,7 +41,6 @@ export class LoginComponent implements OnInit {
 
     this.createUser = db.collection('userProfile').valueChanges();
     console.log(this.createUser);
-    // 7-11-2018
     this.userCollection = this.db.collection<User>('userProfile');
     this.users = this.userCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {

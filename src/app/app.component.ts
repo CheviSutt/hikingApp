@@ -50,13 +50,10 @@ export class AppComponent implements OnInit {
         console.log('saving user');
         this.createUserService.saveUser(newUser);
       }
-
-      this.router.navigate(['/home']);
     });
   }
 
   logoutBtn(){
-
     this.afAuth.auth.signOut();
   }
 }

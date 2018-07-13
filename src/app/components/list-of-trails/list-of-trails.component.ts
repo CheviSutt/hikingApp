@@ -25,7 +25,6 @@ export class ListOfTrailsComponent implements OnInit {
     this.data.currentZip.subscribe(zip => this.zip = zip); // This was commented out With Albertos code
 
     this.data.currentTrailID.subscribe(trailID => this.trailID = trailID);
-    //this.zip = this.route.snapshot.data.zipCode; // Albertos code for bug
 
     this.trailsService.getTrails(this.zip).subscribe(result => {
       this.trails = result.trails;
