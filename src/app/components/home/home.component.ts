@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { auth } from 'firebase/app';
 import { DataService } from '../../services/data.service';
-import * as firebase from "firebase/app";
-import { AuthService} from "../../services/auth.service";
 import { Router } from "@angular/router";
 
 @Component({
@@ -28,23 +25,10 @@ export class HomeComponent implements OnInit {
     this.zipcode = '';
   }
 
-  loginBtn() {
-    this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
-  }
-
-  logoutBtn(){
-    this.afAuth.auth.signOut();
-  }
-
   searchBtn() {
       this.data.changeZip(this.zipcode);
-      // this.router.navigateByUrl('/list-of-trails'); // Alberto's code for bug
     }
 }
 
-
- //    firebase.auth().onAuthStateChanged(function(user) {
- //      this.data.changeZip(this.zipcode);
- // }
 
 

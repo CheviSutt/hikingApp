@@ -56,7 +56,8 @@ export class AppComponent implements OnInit {
     });
   }
 
-  logoutBtn() {
+  logoutBtn(){
+
     this.afAuth.auth.signOut();
   }
 }
