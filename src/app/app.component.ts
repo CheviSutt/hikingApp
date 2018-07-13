@@ -31,12 +31,9 @@ export interface UserId extends User {
 export class AppComponent implements OnInit{
   createUser: Observable<any[]>;
 
-  // 7-11-2018
-  //user = this.setUser();//equal to returned value of setUser
-
   private userCollection: AngularFirestoreCollection<User>;
   users: Observable<any[]>;
-  //--------
+
 
   constructor(
     private db: AngularFirestore,
@@ -67,21 +64,6 @@ export class AppComponent implements OnInit{
     document.body.classList.add('bg-img');
   }
 
-  // 7-11-2018
-  // setUser() {
-  //   this.user = {
-  //     address: "",
-  //     city: "",
-  //     firstName: "",
-  //     lastName: "",
-  //     state: "",
-  //     zipCode: "",
-  //     email: "",
-  //     password: ""
-  //   }
-  //   return this.user;
-  // }
-  //------
 
   loginBtn() {
     this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider()).then( authenticated => {
@@ -98,17 +80,6 @@ export class AppComponent implements OnInit{
         console.log('saving user');
         this.createUserService.saveUser(newUser);
       }
-
-      // 7-11-2018
-      // console.log(this.user);
-      // this.userCollection.add(this.user);
-      //
-      // firebase.auth().signOut().then(function() {
-      //   // Sign-out successful.
-      // }).catch(function(error) {
-      //   // An error happened.
-      // });
-      //-------------
 
       this.router.navigate(['/home']);
     })
