@@ -1,6 +1,3 @@
-trail-details {
-  background-color: #586c9a;
-}
 .trailImg {
   margin: 15px auto;
   /* max-width: 300px; */
@@ -17,7 +14,6 @@ mat-card {
   color: #ffffff;
   max-width: 800px;
   margin: 0 auto;
-  /* font-family: 'Roboto', sans-serif; */
 }
 
 mat-card-actions {

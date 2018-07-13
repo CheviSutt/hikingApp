@@ -19,8 +19,8 @@
       </p>
     </mat-card-content>
 
-    <mat-card-actions>
-      <button [routerLink]="['/trail-details', {id: trail.id, zip: zip}]" mat-button>Details</button>
+    <mat-card-actions class="detailsBtn">
+      <button mat-raised-button [routerLink]="['/trail-details', {id: trail.id, zip: zip}]" mat-button>Details</button>
     </mat-card-actions>
 
   </mat-card>
