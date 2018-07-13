@@ -4,25 +4,18 @@ import { auth } from 'firebase/app';
 import { NavigationEnd, Router } from '@angular/router';
 import { Observable } from "rxjs/Rx";
 import { AngularFirestore, AngularFirestoreCollection } from "angularfire2/firestore";
-import { FormControl, Validators } from "@angular/forms";
 import { CreateUserService } from "./services/create-user.service";
 import { HttpClient } from "@angular/common/http";
 import { map } from "rxjs/internal/operators";
-import * as firebase from "firebase";
 
-// 7-11-2018
-export interface Users {
-  address: string;
-  city: string;
-  firstName: string;
-  lastName: string;
-  state: string;
-  zipCode: string;
+export interface User {
+  displayName: string;
   email: any;
-  password: string;
+  photoURL: string;
+  uid: string;
 }
 
-export interface UserId extends Users {
+export interface UserId extends User {
   id: string;
 }
 //--------
@@ -36,26 +29,16 @@ export class AppComponent implements OnInit{
   createUser: Observable<any[]>;
   public location = ''; //Celie's code. Don't delete.
 
-  // 7-11-2018
-  user = this.setUser();//equal to returned value of setUser
-  hide = true;
-  email = new FormControl('', [Validators.required, Validators.email]);
-
-  private userCollection: AngularFirestoreCollection<Users>;
+  private userCollection: AngularFirestoreCollection<User>;
   users: Observable<any[]>;
-  private password: string;
   //--------
 
   constructor(
     private db: AngularFirestore,
     public afAuth: AngularFireAuth,
     private router: Router,
-
-    // 7-11-2018
     private http: HttpClient,
     private createUserService: CreateUserService,
-    //-------
-
   ) {
 
     //Celie's code. Don't delete:
@@ -70,10 +53,10 @@ export class AppComponent implements OnInit{
     this.createUser = db.collection('userProfile').valueChanges();
     console.log(this.createUser);
     // 7-11-2018
-    this.userCollection = this.db.collection<Users>('userProfile');
+    this.userCollection = this.db.collection<User>('userProfile');
     this.users = this.userCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
-        const data = a.payload.doc.data() as Users;
+        const data = a.payload.doc.data() as User;
         const id = a.payload.doc.id;
         return { id, ...data };
       }))
@@ -86,49 +69,23 @@ export class AppComponent implements OnInit{
     document.body.classList.add('bg-img');
   }
 
-  // 7-11-2018
-  getErrorMessage() {
-    return this.email.hasError('required') ? 'You must enter a value' :
-      this.email.hasError('email') ? 'Not a valid email' :
-        '';
-  }
-
-  setUser() {
-    this.user = {
-      address: "",
-      city: "",
-      firstName: "",
-      lastName: "",
-      state: "",
-      zipCode: "",
-      email: "",
-      password: ""
-    }
-    return this.user;
-  }
-  //------
-
   loginBtn() {
     this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider()).then( authenticated => {
-      console.log('authenticed');
+      console.log(authenticated);
 
-      // 7-11-2018
-      console.log(this.user);
-      this.userCollection.add(this.user);
-
-      firebase.auth().signOut().then(function() {
-        // Sign-out successful.
-      }).catch(function(error) {
-        // An error happened.
-      });
-      //-------------
-
+      if (authenticated.additionalUserInfo.isNewUser) {
+        const newUser: User = {
+          displayName:authenticated.user.displayName,
+          email:authenticated.user.email,
+          photoURL:authenticated.user.photoURL,
+          uid:authenticated.user.uid
+        };
+        console.log('saving user');
+        this.createUserService.saveUser(newUser);
+      }
       this.router.navigate(['/home']);
     })
   }
-
-
-
   logoutBtn(){
     this.afAuth.auth.signOut();
   }

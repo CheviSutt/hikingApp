@@ -2,6 +2,7 @@ body {
   background-color: #CFD8DC;
 }
 .trailImg {
+  margin: 15px auto;
   /* max-width: 300px; */
   width: 100%;
   /* margin: 0 auto; */
@@ -12,8 +13,8 @@ button {
 }
 
 mat-card {
-  background-color: #ECEFF1;
-  color: black;
+  background-color: #586c9a;
+  color: #ffffff;
   /* font-family: 'Roboto', sans-serif; */
 }
 
@@ -26,3 +27,26 @@ stars {
   color: #ffb500;
 }
 
+.ratingDiv {
+  display: flex;
+  flex-direction: row;
+}
+
+.numOfRatings {
+  margin-left: 10px; 
+}
+
+.ascent-icon {
+  font-size: 10px;
+}
+
+.upDownArrows {
+  font-size: 10px;
+  margin: 0;
+}
+
+.length {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

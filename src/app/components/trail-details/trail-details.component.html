@@ -1,19 +1,23 @@
 <mat-card>
   <mat-card-content>
     <h2>{{activeTrail?.name}}</h2>
+    <p>{{activeTrail?.location}}</p>
     <h5>{{trailWeather?.main.temp}} &#8457;</h5>
-    <h5>{{trailWeather?.weather}}</h5>
     <img class="trailImg" *ngIf="activeTrail" [src]="activeTrail.imgMedium">
-    <p><strong>Location:</strong> {{activeTrail?.location}}</p>
-    <p><strong>Difficulty:</strong> {{activeTrail?.difficulty}}</p>
-    <p><strong>Length:</strong> {{activeTrail?.length}} miles out and back</p>
-    <p><strong>High Elevation:</strong> {{activeTrail?.high}} feet</p>
-    <p><strong>Low Elevation:</strong> {{activeTrail?.low}} feet</p>
-    <p><strong>Condition:</strong> {{activeTrail?.conditionStatus}}</p>
-    <p><strong>Details:</strong> {{activeTrail?.conditionDetails}}</p>
+    <div class="length">
+      <p><strong>Difficulty:</strong> {{activeTrail?.difficulty}}</p>
+      <p>{{activeTrail?.length}} mi out & back</p>
+      <p>{{activeTrail?.ascent}} ft <mat-icon class="ascent-icon">trending_up</mat-icon></p>
+    </div>
     <p><strong>Description:</strong> {{activeTrail?.summary}}</p>
-    <p class="possible-stars">{{activeTrail?.stars}} out of 5 Stars</p>
-    <stars [trailRating]="activeTrail?.stars"></stars>
+    <p><strong>Elevation:</strong> High: {{activeTrail?.high}} ft, Low: {{activeTrail?.low}} ft</p>
+    <p><strong>Condition:</strong> {{activeTrail?.conditionStatus}}</p>
+    <!-- <p><strong>Details:</strong> {{activeTrail?.conditionDetails}}</p> -->
+    <p class="possible-stars"><strong>{{activeTrail?.stars}} out of 5 Stars</strong></p>
+    <div class="ratingDiv">
+      <stars [trailRating]="activeTrail?.stars"></stars>
+      <p class="numOfRatings">({{activeTrail?.starVotes}})</p>
+    </div>
     <p id="reviewsOn"  style="display:none;"><strong>Reviews:</strong>
       <li *ngIf="review">{{review.data}}</li>
     </p>
