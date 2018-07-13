@@ -20,12 +20,19 @@
       <button mat-raised-button [routerLink]="['']" type="submit" class="btn" (click)="logoutBtn()">Logout</button>
     </div>
   </div>
+  <router-outlet></router-outlet>
 </div>
 
-<div class="logoutOnly" *ngIf = "location == '/list-of-trails' && '/trail-details' && '/write-a-review' ">
+<div class="logoutOnly" *ngIf = "location == '/list-of-trails' && '/write-a-review' ">
   <div class="btnContainer">
     <button mat-raised-button [routerLink]="['']" type="submit" class="btn" (click)="logoutBtn()">Logout</button>
   </div>
+  <router-outlet></router-outlet>
 </div>
 
-<router-outlet></router-outlet>
+<div class="detailsOnly" *ngIf = "location == '/trail-details'">
+  <div class="btnContainer">
+    <button mat-raised-button [routerLink]="['']" type="submit" class="btn" (click)="logoutBtn()">Logout</button>
+  </div>
+  <router-outlet></router-outlet>
+</div>
