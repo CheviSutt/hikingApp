@@ -4,4 +4,5 @@
 
 .trailsList {
   display: flex;
+  width: 100%;
 }
