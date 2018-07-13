@@ -1,41 +1,6 @@
-<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
-
-<div class="backAndLogin"
-     *ngIf = "location !== '/home' && '/list-of-trails' && '/stars' && '/trail-details' && '/write-a-review' ">
-  <div class="btnContainer">
-    <div class="loginBtn">
-      <button mat-raised-button type="submit" class="btn" (click)="loginBtn()">Login</button>
-    </div>
-  </div>
-  <div class="spacer-top"></div>
-  <div class="title">
-    <p>I'd Hike That</p>
-  </div>
-  <div class="spacer-bottom"></div>
-</div>
-
-<div class="backAndLogout" *ngIf = "location == '/home' ">
-  <div class="btnContainer">
-    <div class="logoutBtn">
-      <button mat-raised-button [routerLink]="['']" type="submit" class="btn" (click)="logoutBtn()">Logout</button>
-    </div>
-  </div>
-  <router-outlet></router-outlet>
-</div>
-
-<div class="logoutOnly" *ngIf = "location == '/list-of-trails' && '/write-a-review' ">
-  <div class="btnContainer">
-    <button mat-raised-button [routerLink]="['']" type="submit" class="btn" (click)="logoutBtn()">Logout</button>
-  </div>
-  <router-outlet></router-outlet>
-</div>
-
-<div class="detailsOnly" *ngIf = "location == '/trail-details'">
-  <div class="btnContainer">
-    <button mat-raised-button [routerLink]="['']" type="submit" class="btn" (click)="logoutBtn()">Logout</button>
-  </div>
-  <router-outlet></router-outlet>
-</div>
-
+<mat-toolbar>
+  <button *ngIf="!currentUser" (click)="loginBtn()" mat-raised-button>Login</button>
+  <button *ngIf="currentUser" (click)="logoutBtn()" mat-raised-button>Logout</button>
+</mat-toolbar>
 <router-outlet></router-outlet>
 

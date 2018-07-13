@@ -5,6 +5,10 @@
   /* margin: 0 auto; */
 }
 
+.detailsOnly{
+  background-color: #586c9a;
+}
+
 button {
   background-color: #ffff;;
 }
@@ -14,6 +18,8 @@ mat-card {
   color: #ffffff;
   max-width: 800px;
   margin: 0 auto;
+  /* height: calc(100vh - 64px); */
+  /* min-width: 100%;  */
 }
 
 mat-card-actions {
