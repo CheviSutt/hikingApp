@@ -1,3 +1,7 @@
 .mat-card {
-  max-width: 300px;
+  width: 33%;
+}
+
+.trailsList {
+  display: flex;
 }

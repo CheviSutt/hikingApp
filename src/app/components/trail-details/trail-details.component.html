@@ -12,15 +12,14 @@
     <p><strong>Description:</strong> {{activeTrail?.summary}}</p>
     <p><strong>Elevation:</strong> High: {{activeTrail?.high}} ft, Low: {{activeTrail?.low}} ft</p>
     <p><strong>Condition:</strong> {{activeTrail?.conditionStatus}}</p>
-    <!-- <p><strong>Details:</strong> {{activeTrail?.conditionDetails}}</p> -->
     <p class="possible-stars"><strong>{{activeTrail?.stars}} out of 5 Stars</strong></p>
     <div class="ratingDiv">
       <stars [trailRating]="activeTrail?.stars"></stars>
       <p class="numOfRatings">({{activeTrail?.starVotes}})</p>
     </div>
-    <p id="reviewsOn"  style="display:none;"><strong>Reviews:</strong>
-      <li *ngIf="review">{{review.data}}</li>
-    </p>
+    <div id="reviewsOn"  style="display:none;"><strong>Reviews:</strong>
+      <p *ngIf="review">{{review.data}}</p>
+    </div>
   </mat-card-content>
   <mat-card-actions>
     <button mat-raised-button (click)="back()"><mat-icon>chevron_left</mat-icon> Back</button>
