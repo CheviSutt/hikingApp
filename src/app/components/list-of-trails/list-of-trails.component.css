@@ -1,8 +1,9 @@
 .mat-card {
+  display: flex;
+  flex-direction: column;
   width: 25%;
   background-color: #dadfea;
   margin: 25px;
-  height: 430px;
 }
 
 .trailsList {
@@ -17,11 +18,14 @@
   display: flex; 
   align-items: flex-end;
   justify-content: flex-end;
-  margin-top: 50px;
+  /* margin-top: 50px; */
+  position: absolute;
 }
 
 img {
-  height: 33%;
+  /* height: 33%; */
+  width: 100%;
+  margin: 0px auto 15px auto;
 }
 
 mat-card-header {
