@@ -1,34 +1,38 @@
 .trailImg {
   margin: 15px auto;
-  /* max-width: 300px; */
   width: 100%;
-  /* margin: 0 auto; */
-}
-
-.detailsOnly{
-  background-color: #586c9a;
 }
 
 button {
-  background-color: #ffff;;
+  background-color: #ffff;
+  font-family: 'Poiret One', cursive;
+  font-weight: bolder;
 }
 
 mat-card {
-  background-color: #586c9a;
+  margin: 64px auto 0 auto;
+  background-color: #4068A5;
   color: #ffffff;
   max-width: 800px;
-  margin: 0 auto;
-  /* height: calc(100vh - 64px); */
-  /* min-width: 100%;  */
+}
+
+mat-card-content {
+  font-family: 'Arimo', sans-serif;
 }
 
 mat-card-actions {
   display: flex;
-  justify-content:flex-start;
+  justify-content: flex-start;
 }
 
 stars {
   color: #ffb500;
+}
+
+.detailTitle {
+  font-family: 'Poiret One', cursive;
+  font-size: 40px;
+  font-weight: bolder;
 }
 
 .ratingDiv {
@@ -37,7 +41,7 @@ stars {
 }
 
 .numOfRatings {
-  margin-left: 10px; 
+  margin-left: 10px;
 }
 
 .ascent-icon {
@@ -53,4 +57,16 @@ stars {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.detailsBtnContainer {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 475px) {
+  .mat-card {
+    padding: 30px 20px;
+    margin: 1px;
+  }
 }
