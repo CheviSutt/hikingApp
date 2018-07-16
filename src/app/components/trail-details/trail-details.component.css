@@ -7,33 +7,33 @@ button {
   background-color: #ffff;
   font-family: 'Poiret One', cursive;
   font-weight: bolder;
- }
+}
 
- mat-card {
+mat-card {
   margin: 64px auto 0 auto;
   background-color: #4068A5;
   color: #ffffff;
   max-width: 800px;
- }
+}
 
- mat-card-content{
+mat-card-content {
   font-family: 'Arimo', sans-serif;
- }
- 
- mat-card-actions {
+}
+
+mat-card-actions {
   display: flex;
-  justify-content:flex-start;
- }
+  justify-content: flex-start;
+}
 
 stars {
   color: #ffb500;
 }
 
-.detailTitle{
+.detailTitle {
   font-family: 'Poiret One', cursive;
   font-size: 40px;
   font-weight: bolder;
- }
+}
 
 .ratingDiv {
   display: flex;
@@ -41,7 +41,7 @@ stars {
 }
 
 .numOfRatings {
-  margin-left: 10px; 
+  margin-left: 10px;
 }
 
 .ascent-icon {
@@ -70,5 +70,3 @@ stars {
     margin: 1px;
   }
 }
-
-

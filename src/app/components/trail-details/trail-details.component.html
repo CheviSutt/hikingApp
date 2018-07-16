@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <link href="https://fonts.googleapis.com/css?family=Poiret+One%7CArimo" rel="stylesheet">
+=======
+<link href="https://fonts.googleapis.com/css?family=Poiret+One|Arimo" rel="stylesheet">
+>>>>>>> b8ed96cb600c5c0300bea1a9a7377be9105e4b10
 <mat-card>
   <mat-card-header>
     <mat-card-title class="detailTitle">{{activeTrail?.name}}</mat-card-title>
@@ -10,7 +14,9 @@
     <div class="length">
       <p><strong>Difficulty:</strong> {{activeTrail?.difficulty}}</p>
       <p>{{activeTrail?.length}} mi out & back</p>
-      <p>{{activeTrail?.ascent}} ft <mat-icon class="ascent-icon">trending_up</mat-icon></p>
+      <p>{{activeTrail?.ascent}} ft
+        <mat-icon class="ascent-icon">trending_up</mat-icon>
+      </p>
     </div>
     <p><strong>Description:</strong> {{activeTrail?.summary}}</p>
     <p><strong>Elevation:</strong> High: {{activeTrail?.high}} ft, Low: {{activeTrail?.low}} ft</p>
@@ -20,7 +26,7 @@
       <stars [trailRating]="activeTrail?.stars"></stars>
       <p class="numOfRatings">({{activeTrail?.starVotes}})</p>
     </div>
-    <div id="reviewsOn"  style="display:none;"><strong>Reviews:</strong>
+    <div id="reviewsOn" style="display:none;"><strong>Reviews:</strong>
       <p *ngIf="review">{{review.data}}</p>
     </div>
   </mat-card-content>
