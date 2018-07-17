@@ -27,6 +27,7 @@ import { AngularFireModule } from "angularfire2";
 import { AngularFirestoreModule } from "angularfire2/firestore";
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { LoginComponent } from './components/login/login.component';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { LoginComponent } from './components/login/login.component';
     TrailDetailsComponent,
     WriteAReviewComponent,
     StarsComponent,
-    LoginComponent
+    LoginComponent,
+    ErrorPageComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environments.firebase),
