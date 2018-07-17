@@ -1,31 +1,40 @@
+
 .mat-card {
   display: flex;
   flex-direction: column;
   width: 25%;
-  background-color: #dadfea;
-  margin: 25px;
+  background-color: #4068A5;
+  color: #FFFFFF;
+  margin: 65px 45px 0px 45px;
+}
+
+.listTitle{
+  font-family: 'Poiret One', cursive;
+  font-size: 18px;
+  font-weight: bolder;
 }
 
 .trailsList {
   display: flex;
-  justify-content: space-around;
-  width: 100%;
+  justify-content: center;
   flex-wrap: wrap;
-  /* margin: 0 auto; */
 }
 
-.detailsBtn {
+.detailsBtnContainer {
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  /* margin-top: 50px; */
-  /* position: absolute; */
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+}
+
+button{
+  font-family: 'Poiret One', cursive;
+  font-weight: bolder;
 }
 
 img {
-  /* height: 33%; */
   width: 100%;
-  margin: 0px auto 15px auto;
+  margin: 5px auto 15px auto;
 }
 
 mat-card-header {
@@ -34,13 +43,22 @@ mat-card-header {
 
 mat-card-content {
   height: 20%;
+  font-family: 'Arimo', sans-serif;
 }
 
-@media screen and (max-width: 915px) {
+@media screen and (max-width: 1079px) {
   .mat-card {
-    width: 40%;
+    width: 38%;
   }
 }
+
+@media screen and (max-width: 749px) {
+  .mat-card {
+    width: 38%;
+    margin: 44px 29px 0px 29px;
+  }
+}
+
 @media screen and (max-width: 607px) {
   .mat-card {
     width: 45%;
