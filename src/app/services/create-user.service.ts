@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import {Observable} from "rxjs/index";
+import { Observable } from "rxjs/index";
 import * as firebase from "firebase";
-import {AngularFirestore} from "angularfire2/firestore";
-import {User} from "../app.component";
+import  {AngularFirestore } from "angularfire2/firestore";
+import { User } from "../app.component";
 
 @Injectable()
 

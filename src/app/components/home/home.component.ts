@@ -28,6 +28,7 @@ export class HomeComponent implements OnInit {
   searchBtn() {
       this.data.changeZip(this.zipcode);
     }
+
 }
 
 

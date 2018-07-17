@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
-import {NavigationEnd, Router} from '@angular/router';
-import {Observable} from 'rxjs/Rx';
-import {AngularFirestore, AngularFirestoreCollection} from 'angularfire2/firestore';
+import { NavigationEnd, Router } from '@angular/router';
+import { Observable } from 'rxjs/Rx';
+import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import {CreateUserService} from '../../services/create-user.service';
 import {HttpClient} from '@angular/common/http';
-import {map} from 'rxjs/internal/operators';
+import { map } from 'rxjs/internal/operators';
 
 export interface User {
   displayName: string;
