@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from 'angularfire2/auth';
-import { DataService } from '../../services/data.service';
-import { Router } from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {AngularFireAuth} from 'angularfire2/auth';
+import {DataService} from '../../services/data.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'home',
@@ -10,15 +10,14 @@ import { Router } from "@angular/router";
 })
 
 export class HomeComponent implements OnInit {
-  user: any;
   zipcode: string;
   zip: string;
 
   constructor(
-    public afAuth: AngularFireAuth,
     private data: DataService,
     private router: Router
-  ) {}
+  ) {
+  }
 
   ngOnInit() {
     this.data.currentZip.subscribe(zip => this.zip = zip);
@@ -26,10 +25,10 @@ export class HomeComponent implements OnInit {
   }
 
   searchBtn() {
-      this.data.changeZip(this.zipcode);
+    this.data.changeZip(this.zipcode);
+
+    if(this.zipcode === ''){
+      this.router.navigate(['error-page']);
     }
-
+  }
 }
-
-
-

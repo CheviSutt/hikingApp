@@ -12,7 +12,6 @@ import { WeatherService } from './services/weather.service';
 import { MapsService } from './services/maps.service';
 import { CreateUserService } from "./services/create-user.service";
 import { DataService } from './services/data.service';
-import { AuthService} from "./services/auth.service";
 import { environments } from '../environments/environments';
 
 import { ListOfTrailsComponent } from './components/list-of-trails/list-of-trails.component';
@@ -54,6 +53,7 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
     RouterModule.forRoot([
       { path: '', component: LoginComponent },
       { path: "home", component: HomeComponent },
+      { path: "error-page", component: ErrorPageComponent},
       { path: "list-of-trails", component: ListOfTrailsComponent },
       { path: "trail-details", component: TrailDetailsComponent },
       { path: "write-a-review", component: WriteAReviewComponent },
@@ -68,8 +68,7 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
     WeatherService,
     MapsService,
     CreateUserService,
-    DataService,
-    AuthService
+    DataService
   ],
   bootstrap: [AppComponent]
 })
