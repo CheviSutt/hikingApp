@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { DataService } from '../../services/data.service';
 import { Router } from "@angular/router";
+// import { TrailsService } from '../../services/trails.service';
 
 @Component({
   selector: 'home',
@@ -27,8 +28,12 @@ export class HomeComponent implements OnInit {
 
   searchBtn() {
       this.data.changeZip(this.zipcode);
+  }
+
+  onEnter(event) {
+    if (event.key === "Enter") {
+      this.searchBtn();
     }
+    this.router.navigate(['/list-of-trails']);
+  }
 }
-
-
-

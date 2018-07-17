@@ -33,7 +33,7 @@ button{
 
 img {
   width: 100%;
-  margin: 5px auto 15px auto;
+  margin: 10px auto 15px auto;
 }
 
 mat-card-header {
@@ -49,6 +49,10 @@ mat-card-content {
   .mat-card {
     width: 38%;
   }
+  img {
+    width: 100%;
+    margin: 23px auto 15px auto;
+  }
 }
 
 @media screen and (max-width: 749px) {
@@ -56,12 +60,20 @@ mat-card-content {
     width: 38%;
     margin: 44px 29px 0px 29px;
   }
+  img {
+    width: 100%;
+    margin: 23px auto 15px auto;
+  }
 }
 
 @media screen and (max-width: 607px) {
   .mat-card {
     width: 45%;
     margin: 5px 5px;
+  }
+  img {
+    width: 100%;
+    margin: 23px auto 15px auto;
   }
 }
 @media screen and (max-width: 465px) {
