@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {AngularFireAuth} from 'angularfire2/auth';
 import {DataService} from '../../services/data.service';
 import {Router} from '@angular/router';
 
@@ -26,9 +25,15 @@ export class HomeComponent implements OnInit {
 
   searchBtn() {
     this.data.changeZip(this.zipcode);
-
-    if(this.zipcode === ''){
+    if (this.zipcode === '') {
       this.router.navigate(['error-page']);
     }
+  }
+
+  onEnter(event) {
+    if (event.key === 'Enter') {
+      this.searchBtn();
+    }
+    this.router.navigate(['/list-of-trails']);
   }
 }
