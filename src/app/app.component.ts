@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
-import {auth} from 'firebase/app';
+import { auth } from 'firebase/app';
 import {Router} from '@angular/router';
 import {CreateUserService} from './services/create-user.service';
 
@@ -30,8 +30,7 @@ export class AppComponent implements OnInit {
     afAuth.authState.subscribe((user: firebase.User) => {
       this.currentUser = user;
     });
-
-  }
+    }
 
   ngOnInit() {
   }

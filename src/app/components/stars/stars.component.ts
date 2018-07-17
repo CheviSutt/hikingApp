@@ -33,3 +33,7 @@ export class StarsComponent implements OnInit {
     this.dataService.currentTrailID.subscribe(trailID => this.trailID = trailID);
   }
 }
+
+
+
+

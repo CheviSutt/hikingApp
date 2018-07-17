@@ -1,3 +1,4 @@
+
 .mat-card {
   display: flex;
   flex-direction: column;
@@ -11,7 +12,7 @@
   font-family: 'Poiret One', cursive;
   font-size: 18px;
   font-weight: bolder;
- }
+}
 
 .trailsList {
   display: flex;
@@ -20,7 +21,7 @@
 }
 
 .detailsBtnContainer {
-  display: flex; 
+  display: flex;
   position: absolute;
   bottom: 25px;
   right: 25px;
@@ -29,7 +30,7 @@
 button{
   font-family: 'Poiret One', cursive;
   font-weight: bolder;
- }
+}
 
 img {
   width: 100%;
@@ -43,7 +44,7 @@ mat-card-header {
 mat-card-content {
   height: 20%;
   font-family: 'Arimo', sans-serif;
- }
+}
 
 @media screen and (max-width: 1079px) {
   .mat-card {
