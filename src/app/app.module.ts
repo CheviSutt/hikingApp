@@ -12,7 +12,6 @@ import { WeatherService } from './services/weather.service';
 import { MapsService } from './services/maps.service';
 import { CreateUserService } from "./services/create-user.service";
 import { DataService } from './services/data.service';
-import { AuthService} from "./services/auth.service";
 import { environments } from '../environments/environments';
 
 import { ListOfTrailsComponent } from './components/list-of-trails/list-of-trails.component';
@@ -27,6 +26,7 @@ import { AngularFireModule } from "angularfire2";
 import { AngularFirestoreModule } from "angularfire2/firestore";
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { LoginComponent } from './components/login/login.component';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,8 @@ import { LoginComponent } from './components/login/login.component';
     TrailDetailsComponent,
     WriteAReviewComponent,
     StarsComponent,
-    LoginComponent
+    LoginComponent,
+    ErrorPageComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environments.firebase),
@@ -52,7 +53,11 @@ import { LoginComponent } from './components/login/login.component';
     RouterModule.forRoot([
       { path: '', component: LoginComponent },
       { path: "home", component: HomeComponent },
+<<<<<<< HEAD
       // { path: "home", component: HomeComponent, canActivate: [AuthGaurdService] },
+=======
+      { path: "error-page", component: ErrorPageComponent},
+>>>>>>> a2ce70d50e38edda311827eae4e98bcd414ca862
       { path: "list-of-trails", component: ListOfTrailsComponent },
       { path: "trail-details", component: TrailDetailsComponent },
       { path: "write-a-review", component: WriteAReviewComponent },
@@ -67,8 +72,12 @@ import { LoginComponent } from './components/login/login.component';
     WeatherService,
     MapsService,
     CreateUserService,
+<<<<<<< HEAD
     DataService,
     AuthService,
+=======
+    DataService
+>>>>>>> a2ce70d50e38edda311827eae4e98bcd414ca862
   ],
   bootstrap: [AppComponent]
 })
