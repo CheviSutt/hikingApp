@@ -4,7 +4,6 @@ import { auth } from 'firebase/app';
 import {Router} from '@angular/router';
 import {CreateUserService} from './services/create-user.service';
 
-
 export interface User {
   displayName: string;
   email: any;
@@ -24,7 +23,7 @@ export class AppComponent implements OnInit {
   constructor(
     public afAuth: AngularFireAuth,
     private router: Router,
-    private createUserService: CreateUserService
+    private createUserService: CreateUserService,
   ) {
 
     afAuth.authState.subscribe((user: firebase.User) => {
@@ -33,6 +32,7 @@ export class AppComponent implements OnInit {
     }
 
   ngOnInit() {
+
   }
 
   loginBtn() {

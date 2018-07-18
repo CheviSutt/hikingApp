@@ -52,6 +52,7 @@ import { LoginComponent } from './components/login/login.component';
     RouterModule.forRoot([
       { path: '', component: LoginComponent },
       { path: "home", component: HomeComponent },
+      // { path: "home", component: HomeComponent, canActivate: [AuthGaurdService] },
       { path: "list-of-trails", component: ListOfTrailsComponent },
       { path: "trail-details", component: TrailDetailsComponent },
       { path: "write-a-review", component: WriteAReviewComponent },
@@ -67,7 +68,7 @@ import { LoginComponent } from './components/login/login.component';
     MapsService,
     CreateUserService,
     DataService,
-    AuthService
+    AuthService,
   ],
   bootstrap: [AppComponent]
 })
