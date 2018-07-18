@@ -53,11 +53,7 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
     RouterModule.forRoot([
       { path: '', component: LoginComponent },
       { path: "home", component: HomeComponent },
-<<<<<<< HEAD
-      // { path: "home", component: HomeComponent, canActivate: [AuthGaurdService] },
-=======
       { path: "error-page", component: ErrorPageComponent},
->>>>>>> a2ce70d50e38edda311827eae4e98bcd414ca862
       { path: "list-of-trails", component: ListOfTrailsComponent },
       { path: "trail-details", component: TrailDetailsComponent },
       { path: "write-a-review", component: WriteAReviewComponent },
@@ -72,12 +68,7 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
     WeatherService,
     MapsService,
     CreateUserService,
-<<<<<<< HEAD
-    DataService,
-    AuthService,
-=======
     DataService
->>>>>>> a2ce70d50e38edda311827eae4e98bcd414ca862
   ],
   bootstrap: [AppComponent]
 })
