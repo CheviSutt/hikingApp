@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   }
 
   searchBtn() {
-      this.data.changeZip(this.zipcode);
+    this.data.changeZip(this.zipcode);
   }
 
   onEnter(event) {
@@ -32,4 +32,5 @@ export class HomeComponent implements OnInit {
     }
     this.router.navigate(['/list-of-trails']);
   }
+
 }
