@@ -53,6 +53,7 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
     RouterModule.forRoot([
       { path: '', component: LoginComponent },
       { path: "home", component: HomeComponent },
+      { path: "error-page", component: ErrorPageComponent},
       { path: "list-of-trails", component: ListOfTrailsComponent },
       { path: "trail-details", component: TrailDetailsComponent },
       { path: "write-a-review", component: WriteAReviewComponent },

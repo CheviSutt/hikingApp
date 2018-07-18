@@ -1,6 +1,8 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4fcdfe20cd9a9a8ec99ce448d7e84a5406ae7027
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from 'angularfire2/auth';
 import { DataService } from '../../services/data.service';
 import { Router } from "@angular/router";
 
@@ -37,4 +39,8 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/list-of-trails']);
   }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 4fcdfe20cd9a9a8ec99ce448d7e84a5406ae7027
