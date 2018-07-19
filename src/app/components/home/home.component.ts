@@ -24,6 +24,10 @@ export class HomeComponent implements OnInit {
 
   searchBtn() {
     this.data.changeZip(this.zipcode);
+
+    if(this.zipcode === '') {
+      this.router.navigate(['/error-page']);
+    }
   }
 
   onEnter(event) {
